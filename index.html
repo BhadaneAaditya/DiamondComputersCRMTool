@@ -1270,6 +1270,10 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <label>Product / Service Name</label>
+                    <input type="text" id="sale-product-name" placeholder="e.g. Laptop Repair, Custom Build, Service Charge...">
+                </div>
+                <div class="form-group">
                     <label>Sale Items *</label>
                     <div id="sale-items-container">
                         <div class="sale-item-row" style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr auto; gap: 10px; margin-bottom: 10px;">
@@ -2332,6 +2336,7 @@
             document.getElementById('sale-payment-status').value = sale.paymentStatus;
             document.getElementById('sale-payment-method').value = sale.paymentMethod;
             document.getElementById('sale-notes').value = sale.notes || '';
+            document.getElementById('sale-product-name').value = sale.productName || '';
 
             const container = document.getElementById('sale-items-container');
             container.innerHTML = '';
@@ -2381,6 +2386,7 @@
             document.getElementById('sale-id').value = '';
             document.getElementById('sale-discount').value = '0';
             document.getElementById('sale-tax').value = '0';
+            document.getElementById('sale-product-name').value = '';
             document.getElementById('sale-modal-title').textContent = 'New Sale';
 
             const customerSelect = document.getElementById('sale-customer');
@@ -2573,6 +2579,7 @@
                 receiptNo: id ? (sales.find(s => s.id === id) || {}).receiptNo || generateReceiptNo() : generateReceiptNo(),
                 customerId: document.getElementById('sale-customer').value,
                 phone: document.getElementById('sale-phone').value,
+                productName: document.getElementById('sale-product-name').value.trim(),
                 items: items,
                 subtotal: subtotal,
                 discount: discount,
@@ -2689,6 +2696,13 @@
                 </div>
             `).join('');
 
+            const productNameRow = sale.productName ? `
+                <div style="display: flex; justify-content: space-between; padding: 5px 0; border-bottom: 1px dashed #ddd;">
+                    <span>${escapeHtml(sale.productName)}</span>
+                    <span></span>
+                </div>
+            ` : '';
+
             const receiptHtml = `
                 <div style="text-align: center; background: linear-gradient(135deg, #0f3460, #16213e); color: white; padding: 20px; border-radius: 8px 8px 0 0;">
                     <img src="logo.png" alt="Diamond Computers" style="max-width: 100px; height: auto; margin-bottom: 8px;" onerror="this.style.display='none'">
@@ -2710,6 +2724,7 @@
                         <span>Item</span>
                         <span>Amount</span>
                     </div>
+                    ${productNameRow}
                     ${itemsHtml}
                 </div>
                 <div style="border-top: 2px solid #000; margin-top: 10px; padding-top: 10px;">
@@ -2803,6 +2818,7 @@
 
                 const customerName = customer ? customer.name : 'Valued Customer';
                 const itemsSummary = sale.items.map(item => `${item.name} x${item.qty}`).join(', ');
+                const productLabel = sale.productName ? `\n🏷️ *Product/Service:* ${sale.productName}` : '';
 
                 const sweetMessage = `Hello ${customerName}! 🎉✨
 
@@ -2815,7 +2831,7 @@ We are so grateful for your trust and support. It means the world to us! 🙏❤
 ━━━━━━━━━━━━━━━━━━━━━
 
 📋 *Receipt No:* ${sale.receiptNo}
-📅 *Date:* ${formatDate(sale.createdAt)} ${formatTime(sale.createdAt)}
+📅 *Date:* ${formatDate(sale.createdAt)} ${formatTime(sale.createdAt)}${productLabel}
 🛍️ *Items:* ${itemsSummary}
 💰 *Total:* ₹${sale.total.toLocaleString('en-IN')}
 💳 *Payment:* ${sale.paymentStatus} (${sale.paymentMethod})
@@ -2998,6 +3014,10 @@ With love & gratitude,
 
             doc.setFont('helvetica', 'normal');
             doc.setFontSize(10);
+            if (sale.productName) {
+                doc.text(sale.productName, 22, y);
+                y += 7;
+            }
             sale.items.forEach(item => {
                 doc.text(item.name, 22, y);
                 doc.text(String(item.qty), 115, y);
