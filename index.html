@@ -928,6 +928,12 @@
 
                 <div class="search-bar">
                     <input type="text" id="search-products" placeholder="Search products..." oninput="renderProducts()">
+                    <select id="filter-product-stock" onchange="renderProducts()">
+                        <option value="all">All Stock</option>
+                        <option value="in-stock">In Stock</option>
+                        <option value="low-stock">Low Stock (≤5)</option>
+                        <option value="out-of-stock">Out of Stock</option>
+                    </select>
                 </div>
 
                 <table>
@@ -1738,11 +1744,20 @@
 
         function renderProducts() {
             const search = document.getElementById('search-products').value.toLowerCase();
+            const stockFilter = document.getElementById('filter-product-stock').value;
 
             let filtered = products.filter(p =>
                 p.name.toLowerCase().includes(search) ||
                 (p.category && p.category.toLowerCase().includes(search))
             );
+
+            if (stockFilter === 'in-stock') {
+                filtered = filtered.filter(p => (p.stock || 0) > 0);
+            } else if (stockFilter === 'low-stock') {
+                filtered = filtered.filter(p => (p.stock || 0) > 0 && (p.stock || 0) <= 5);
+            } else if (stockFilter === 'out-of-stock') {
+                filtered = filtered.filter(p => (p.stock || 0) === 0);
+            }
 
             const tbody = document.getElementById('products-table');
             const noData = document.getElementById('no-products');
