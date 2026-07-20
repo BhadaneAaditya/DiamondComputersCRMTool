@@ -9,225 +9,336 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --sidebar-w: 240px;
-            --topbar-h: 52px;
-            --bg-body: #f5f6f8;
+            --sidebar-w: 260px;
+            --topbar-h: 56px;
+            --bg-body: #f0f2f5;
             --bg-surface: #ffffff;
-            --bg-sidebar: #1a1f36;
-            --bg-sidebar-hover: #252b48;
-            --bg-sidebar-active: #2f365a;
-            --bg-topbar: #ffffff;
-            --bg-input: #f5f6f8;
-            --text-primary: #1a1f36;
-            --text-secondary: #5e6278;
-            --text-muted: #9298a8;
-            --text-sidebar: #8890a8;
+            --bg-sidebar: #0f1729;
+            --bg-sidebar-hover: rgba(99,102,241,0.08);
+            --bg-sidebar-active: rgba(99,102,241,0.15);
+            --bg-topbar: rgba(255,255,255,0.85);
+            --bg-input: #f5f7fa;
+            --text-primary: #111827;
+            --text-secondary: #4b5563;
+            --text-muted: #9ca3af;
+            --text-sidebar: rgba(255,255,255,0.5);
             --text-sidebar-active: #ffffff;
-            --border: #e3e6ed;
-            --accent: #0052cc;
-            --accent-hover: #0043a3;
-            --accent-light: rgba(0,82,204,0.06);
-            --success: #00875a;
-            --success-bg: rgba(0,135,90,0.07);
-            --warning: #ff991f;
-            --warning-bg: rgba(255,153,31,0.07);
-            --danger: #de350b;
-            --danger-bg: rgba(222,53,11,0.07);
-            --shadow-sm: 0 1px 2px rgba(9,30,66,0.06);
-            --shadow-md: 0 4px 8px -2px rgba(9,30,66,0.1);
-            --shadow-lg: 0 8px 24px -4px rgba(9,30,66,0.14);
-            --radius: 4px;
-            --radius-lg: 6px;
-            --transition: all 0.15s ease;
+            --border: #e5e7eb;
+            --accent: #6366f1;
+            --accent-hover: #4f46e5;
+            --accent-light: rgba(99,102,241,0.06);
+            --accent-gradient: linear-gradient(135deg,#6366f1 0%,#8b5cf6 100%);
+            --success: #059669;
+            --success-bg: rgba(5,150,105,0.08);
+            --warning: #d97706;
+            --warning-bg: rgba(217,119,6,0.08);
+            --danger: #dc2626;
+            --danger-bg: rgba(220,38,38,0.06);
+            --info: #0ea5e9;
+            --info-bg: rgba(14,165,233,0.08);
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+            --shadow-md: 0 4px 12px -2px rgba(0,0,0,0.08);
+            --shadow-lg: 0 12px 32px -4px rgba(0,0,0,0.12);
+            --shadow-xl: 0 20px 48px -8px rgba(0,0,0,0.16);
+            --radius: 8px;
+            --radius-lg: 12px;
+            --radius-xl: 16px;
+            --transition: all 0.2s cubic-bezier(0.4,0,0.2,1);
+            --transition-fast: all 0.15s cubic-bezier(0.4,0,0.2,1);
         }
         [data-theme="dark"] {
-            --bg-body: #1b1f2b;
-            --bg-surface: #222639;
-            --bg-sidebar: #131625;
-            --bg-sidebar-hover: #1c2033;
-            --bg-sidebar-active: #252a42;
-            --bg-topbar: #222639;
-            --bg-input: #2a2f45;
-            --text-primary: #e8eaf0;
-            --text-secondary: #9da3b5;
+            --bg-body: #0b0f1a;
+            --bg-surface: #141825;
+            --bg-sidebar: #080c15;
+            --bg-sidebar-hover: rgba(99,102,241,0.1);
+            --bg-sidebar-active: rgba(99,102,241,0.18);
+            --bg-topbar: rgba(20,24,37,0.9);
+            --bg-input: #1e2335;
+            --text-primary: #e5e7eb;
+            --text-secondary: #9ca3af;
             --text-muted: #6b7280;
-            --text-sidebar: #7c84a0;
+            --text-sidebar: rgba(255,255,255,0.4);
             --text-sidebar-active: #ffffff;
-            --border: #363b52;
-            --accent: #4c9aff;
-            --accent-hover: #7ab8ff;
-            --accent-light: rgba(76,154,255,0.1);
-            --success: #36b37e;
-            --success-bg: rgba(54,179,126,0.1);
-            --warning: #ffab00;
-            --warning-bg: rgba(255,171,0,0.1);
-            --danger: #ff5630;
-            --danger-bg: rgba(255,86,48,0.1);
-            --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
-            --shadow-md: 0 4px 8px rgba(0,0,0,0.35);
-            --shadow-lg: 0 8px 24px rgba(0,0,0,0.45);
+            --border: #1f2937;
+            --accent: #818cf8;
+            --accent-hover: #a5b4fc;
+            --accent-light: rgba(129,140,248,0.1);
+            --accent-gradient: linear-gradient(135deg,#818cf8 0%,#a78bfa 100%);
+            --success: #34d399;
+            --success-bg: rgba(52,211,153,0.1);
+            --warning: #fbbf24;
+            --warning-bg: rgba(251,191,36,0.1);
+            --danger: #f87171;
+            --danger-bg: rgba(248,113,113,0.08);
+            --info: #38bdf8;
+            --info-bg: rgba(56,189,248,0.1);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.4);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.5);
+            --shadow-lg: 0 12px 32px rgba(0,0,0,0.6);
+            --shadow-xl: 0 20px 48px rgba(0,0,0,0.7);
         }
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;background:var(--bg-body);color:var(--text-primary);min-height:100vh;-webkit-font-smoothing:antialiased;font-size:13px;line-height:1.5}
+        body{font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg-body);color:var(--text-primary);min-height:100vh;-webkit-font-smoothing:antialiased;font-size:13px;line-height:1.6}
 
+        /* ========== ANIMATIONS ========== */
+        @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+        @keyframes slideUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+        @keyframes slideDown{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:translateY(0)}}
+        @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.6}}
+        @keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+        @keyframes gradientShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+        @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+        @keyframes countUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+        @keyframes modalSlideUp{from{opacity:0;transform:translateY(40px) scale(0.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+        @keyframes glowPulse{0%,100%{box-shadow:0 0 20px rgba(99,102,241,0.3)}50%{box-shadow:0 0 40px rgba(99,102,241,0.5)}}
+        @keyframes ripple{to{transform:scale(4);opacity:0}}
+        @keyframes welcomeScale{0%{opacity:0;transform:scale(0.8)}40%{opacity:1;transform:scale(1)}100%{opacity:1;transform:scale(1)}}
+        @keyframes welcomeFade{0%{opacity:1}100%{opacity:0}}
+        .welcome-overlay{position:fixed;inset:0;background:var(--bg-body);display:none;align-items:center;justify-content:center;z-index:10000;flex-direction:column;gap:16px}
+        .welcome-overlay.active{display:flex;animation:welcomeFade 0.6s ease 1.2s forwards}
+        .welcome-overlay .welcome-logo{width:72px;height:72px;background:var(--accent-gradient);border-radius:20px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:24px;color:#fff;animation:welcomeScale 0.5s cubic-bezier(0.16,1,0.3,1)}
+        .welcome-overlay .welcome-text{font-size:22px;font-weight:700;color:var(--text-primary);animation:welcomeScale 0.5s cubic-bezier(0.16,1,0.3,1) 0.1s both;letter-spacing:-0.3px}
+        .welcome-overlay .welcome-sub{font-size:13px;color:var(--text-muted);animation:welcomeScale 0.5s cubic-bezier(0.16,1,0.3,1) 0.2s both}
+
+        /* ========== LOGIN SCREEN ========== */
+        .login-bg{position:fixed;inset:0;background:linear-gradient(-45deg,#0f0c29,#302b63,#24243e,#1a1a2e);background-size:400% 400%;animation:gradientShift 15s ease infinite;display:flex;align-items:center;justify-content:center;z-index:9999}
+        .login-bg::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 80%,rgba(99,102,241,0.15) 0%,transparent 50%),radial-gradient(circle at 80% 20%,rgba(139,92,246,0.1) 0%,transparent 50%);pointer-events:none}
+        .login-card{background:rgba(255,255,255,0.08);backdrop-filter:blur(24px) saturate(1.4);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius-xl);padding:44px 40px;width:400px;box-shadow:0 32px 64px -12px rgba(0,0,0,0.5);animation:slideUp 0.6s cubic-bezier(0.16,1,0.3,1)}
+        .login-card .login-logo{width:56px;height:56px;background:var(--accent-gradient);border-radius:14px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px;color:#fff;margin:0 auto 20px;animation:glowPulse 3s ease-in-out infinite}
+        .login-card h1{font-size:22px;font-weight:700;color:#fff;text-align:center;margin-bottom:4px;letter-spacing:-0.3px}
+        .login-card .login-sub{font-size:13px;color:rgba(255,255,255,0.5);text-align:center;margin-bottom:28px}
+        .login-card label{display:block;margin-bottom:6px;font-size:11px;font-weight:600;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:0.5px}
+        .login-card input{width:100%;padding:12px 16px;border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius);background:rgba(255,255,255,0.06);color:#fff;font-size:14px;transition:var(--transition);font-family:inherit}
+        .login-card input::placeholder{color:rgba(255,255,255,0.3)}
+        .login-card input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(99,102,241,0.2);background:rgba(255,255,255,0.1)}
+        .login-card .login-btn{width:100%;padding:13px;background:var(--accent-gradient);color:#fff;border:none;border-radius:var(--radius);font-size:14px;font-weight:600;cursor:pointer;transition:var(--transition);font-family:inherit;letter-spacing:0.3px;position:relative;overflow:hidden}
+        .login-card .login-btn:hover{transform:translateY(-1px);box-shadow:0 8px 24px -4px rgba(99,102,241,0.4)}
+        .login-card .login-btn:active{transform:translateY(0)}
+        .login-card .login-footer{text-align:center;margin-top:20px;font-size:11px;color:rgba(255,255,255,0.3)}
+        #login-error{background:rgba(220,38,38,0.15);border:1px solid rgba(220,38,38,0.3);border-radius:var(--radius);padding:10px 14px;margin-bottom:16px;font-size:12px;color:#fca5a5;display:none}
+
+        /* ========== APP LAYOUT ========== */
         .app-layout{display:flex;min-height:100vh}
 
+        /* ========== SIDEBAR ========== */
         .sidebar{width:var(--sidebar-w);background:var(--bg-sidebar);position:fixed;top:0;left:0;bottom:0;z-index:200;display:flex;flex-direction:column;transition:var(--transition);border-right:1px solid rgba(255,255,255,0.04)}
-        .sidebar-brand{padding:16px 18px;display:flex;align-items:center;gap:11px;border-bottom:1px solid rgba(255,255,255,0.06)}
-        .sidebar-brand img{width:30px;height:30px;border-radius:6px;object-fit:contain}
-        .sidebar-brand-icon{width:30px;height:30px;background:var(--accent);border-radius:6px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:11px;color:#fff;flex-shrink:0}
-        .sidebar-brand-text{color:#fff;font-size:13px;font-weight:700;line-height:1.3;letter-spacing:-0.2px}
-        .sidebar-brand-text small{display:block;font-size:10px;color:var(--text-sidebar);font-weight:400;letter-spacing:0.15px;margin-top:1px}
-        .sidebar-nav{flex:1;padding:8px 0;overflow-y:auto}
-        .sidebar-section{padding:0 10px;margin-bottom:2px}
-        .sidebar-label{font-size:9px;font-weight:700;color:rgba(255,255,255,0.2);text-transform:uppercase;letter-spacing:1.2px;padding:14px 8px 5px}
-        .sidebar-link{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:var(--radius);color:var(--text-sidebar);font-size:12.5px;font-weight:500;cursor:pointer;transition:var(--transition);border:none;background:none;width:100%;text-align:left}
-        .sidebar-link:hover{background:var(--bg-sidebar-hover);color:var(--text-sidebar-active)}
+        .sidebar-brand{padding:18px 20px;display:flex;align-items:center;gap:12px;border-bottom:1px solid rgba(255,255,255,0.06)}
+        .sidebar-brand img{width:34px;height:34px;border-radius:8px;object-fit:contain}
+        .sidebar-brand-icon{width:34px;height:34px;background:var(--accent-gradient);border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px;color:#fff;flex-shrink:0}
+        .sidebar-brand-text{color:#fff;font-size:13.5px;font-weight:700;line-height:1.3;letter-spacing:-0.2px}
+        .sidebar-brand-text small{display:block;font-size:10px;color:var(--text-sidebar);font-weight:400;letter-spacing:0.2px;margin-top:2px}
+        .sidebar-nav{flex:1;padding:10px 0;overflow-y:auto}
+        .sidebar-section{padding:0 12px;margin-bottom:6px}
+        .sidebar-label{font-size:9px;font-weight:700;color:rgba(255,255,255,0.18);text-transform:uppercase;letter-spacing:1.4px;padding:16px 10px 6px}
+        .sidebar-link{display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:var(--radius);color:var(--text-sidebar);font-size:13px;font-weight:500;cursor:pointer;transition:var(--transition);border:none;background:none;width:100%;text-align:left;font-family:inherit}
+        .sidebar-link:hover{background:var(--bg-sidebar-hover);color:rgba(255,255,255,0.85)}
         .sidebar-link.active{background:var(--bg-sidebar-active);color:var(--text-sidebar-active);font-weight:600}
-        .sidebar-link .icon{width:18px;text-align:center;font-size:13px;flex-shrink:0}
-        .sidebar-footer{padding:8px 10px;border-top:1px solid rgba(255,255,255,0.06)}
-        .sidebar-footer .sidebar-link{font-size:12px;padding:7px 10px}
+        .sidebar-link.active .icon svg{opacity:1}
+        .sidebar-link .icon{width:20px;height:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+        .sidebar-link .icon svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;opacity:0.7;transition:var(--transition-fast)}
+        .sidebar-link:hover .icon svg{opacity:1}
+        .sidebar-footer{padding:14px 14px;border-top:1px solid rgba(255,255,255,0.06)}
+        .sidebar-user{display:flex;align-items:center;gap:10px;padding:8px 10px;margin-bottom:8px}
+        .sidebar-user-avatar{width:32px;height:32px;border-radius:50%;background:var(--accent-gradient);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;color:#fff;flex-shrink:0}
+        .sidebar-user-info{flex:1;min-width:0}
+        .sidebar-user-info .name{font-size:12px;font-weight:600;color:rgba(255,255,255,0.85);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+        .sidebar-user-info .role{font-size:10px;color:rgba(255,255,255,0.35)}
+        .sidebar-footer .sidebar-link{font-size:12px;padding:8px 12px}
 
+        /* ========== MAIN AREA ========== */
         .main-area{margin-left:var(--sidebar-w);flex:1;display:flex;flex-direction:column;min-height:100vh}
-        .topbar{height:var(--topbar-h);background:var(--bg-topbar);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 24px;position:sticky;top:0;z-index:100}
+        .topbar{height:var(--topbar-h);background:var(--bg-topbar);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 32px;position:sticky;top:0;z-index:100}
         .topbar-left{display:flex;align-items:center;gap:12px}
-        .topbar-title{font-size:14px;font-weight:600;color:var(--text-primary);letter-spacing:-0.2px}
-        .topbar-right{display:flex;align-items:center;gap:8px}
-        .topbar-btn{width:32px;height:32px;border-radius:var(--radius);border:1px solid var(--border);background:var(--bg-surface);color:var(--text-secondary);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:14px;transition:var(--transition)}
-        .topbar-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-light)}
+        .topbar-title{font-size:16px;font-weight:700;color:var(--text-primary);letter-spacing:-0.3px}
+        .topbar-breadcrumb{font-size:11px;color:var(--text-muted);margin-left:4px}
+        .topbar-breadcrumb span{color:var(--text-secondary)}
+        .topbar-right{display:flex;align-items:center;gap:6px}
+        .topbar-btn{width:36px;height:36px;border-radius:var(--radius);border:1px solid var(--border);background:var(--bg-surface);color:var(--text-secondary);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;transition:var(--transition);position:relative}
+        .topbar-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-light);transform:translateY(-1px)}
+        .topbar-btn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+        .topbar-search{display:flex;align-items:center;gap:8px;padding:7px 14px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-input);color:var(--text-muted);font-size:12px;cursor:pointer;transition:var(--transition);min-width:180px}
+        .topbar-search:hover{border-color:var(--accent);background:var(--accent-light)}
+        .topbar-search svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
+        .topbar-avatar{width:34px;height:34px;border-radius:50%;background:var(--accent-gradient);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;color:#fff;cursor:pointer;transition:var(--transition);border:2px solid transparent}
+        .topbar-avatar:hover{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-light)}
+        .menu-toggle{display:none;width:36px;height:36px;border-radius:var(--radius);border:1px solid var(--border);background:var(--bg-surface);color:var(--text-secondary);cursor:pointer;align-items:center;justify-content:center;font-size:18px}
 
-        .content{flex:1;padding:20px 24px}
+        /* ========== CONTENT ========== */
+        .content{flex:1;padding:28px 32px}
 
-        .dashboard{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:24px}
-        .stat-card{background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:16px 18px;transition:var(--transition);cursor:pointer;position:relative}
-        .stat-card:hover{box-shadow:var(--shadow-md);border-color:var(--accent)}
-        .stat-card h3{font-size:10.5px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px}
-        .stat-card .value{font-size:26px;font-weight:700;color:var(--accent);letter-spacing:-0.5px}
+        /* ========== DASHBOARD ========== */
+        .dashboard{display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:20px;margin-bottom:32px}
+        .stat-card{background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:22px;transition:var(--transition);cursor:pointer;position:relative;overflow:hidden;animation:slideUp 0.4s cubic-bezier(0.16,1,0.3,1) both}
+        .stat-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;border-radius:4px 0 0 4px;background:var(--accent-gradient);opacity:0;transition:var(--transition)}
+        .stat-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px);border-color:transparent}
+        .stat-card:hover::before{opacity:1}
+        .stat-card-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px}
+        .stat-card h3{font-size:11px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.6px;margin:0}
+        .stat-card-icon{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+        .stat-card-icon svg{width:20px;height:20px;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;fill:none}
+        .stat-card-icon.blue{background:rgba(99,102,241,0.1);color:#6366f1}
+        .stat-card-icon.green{background:rgba(5,150,105,0.1);color:#059669}
+        .stat-card-icon.orange{background:rgba(217,119,6,0.1);color:#d97706}
+        .stat-card-icon.red{background:rgba(220,38,38,0.1);color:#dc2626}
+        .stat-card-icon.cyan{background:rgba(14,165,233,0.1);color:#0ea5e9}
+        .stat-card-icon.purple{background:rgba(139,92,246,0.1);color:#8b5cf6}
+        .stat-card-icon.pink{background:rgba(236,72,153,0.1);color:#ec4899}
+        .stat-card .value{font-size:28px;font-weight:800;background:var(--accent-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-1px;line-height:1.2;animation:countUp 0.5s ease both}
+        .stat-card .trend{font-size:10px;color:var(--success);font-weight:600;margin-top:4px;display:flex;align-items:center;gap:3px}
 
-        .section{background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-lg);margin-bottom:16px}
-        .section-header{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid var(--border)}
-        .section-header h2{font-size:13px;font-weight:600;color:var(--text-primary)}
-        .section-body{padding:14px 18px}
+        /* ========== SECTIONS ========== */
+        .section{background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-lg);margin-bottom:20px;overflow:hidden;transition:var(--transition)}
+        .section:hover{box-shadow:var(--shadow-sm)}
+        .section-header{display:flex;justify-content:space-between;align-items:center;padding:18px 24px;border-bottom:1px solid var(--border)}
+        .section-header h2{font-size:14px;font-weight:700;color:var(--text-primary);letter-spacing:-0.2px}
+        .section-body{padding:20px 24px}
 
-        .btn{padding:7px 14px;border:none;border-radius:var(--radius);cursor:pointer;font-size:12px;font-weight:600;transition:var(--transition);display:inline-flex;align-items:center;gap:5px;letter-spacing:0.1px}
-        .btn-primary{background:var(--accent);color:#fff}
-        .btn-primary:hover{background:var(--accent-hover)}
+        /* ========== BUTTONS ========== */
+        .btn{padding:8px 16px;border:none;border-radius:var(--radius);cursor:pointer;font-size:12.5px;font-weight:600;transition:var(--transition);display:inline-flex;align-items:center;gap:6px;letter-spacing:0.1px;font-family:inherit;position:relative;overflow:hidden}
+        .btn-primary{background:var(--accent-gradient);color:#fff;box-shadow:0 2px 8px -2px rgba(99,102,241,0.4)}
+        .btn-primary:hover{transform:translateY(-1px);box-shadow:0 4px 16px -4px rgba(99,102,241,0.5)}
+        .btn-primary:active{transform:translateY(0)}
         .btn-secondary{background:var(--bg-input);color:var(--text-primary);border:1px solid var(--border)}
-        .btn-secondary:hover{background:var(--border)}
+        .btn-secondary:hover{background:var(--border);border-color:var(--text-muted)}
         .btn-danger{background:var(--danger);color:#fff}
-        .btn-danger:hover{opacity:0.9}
-        .btn-sm{padding:4px 9px;font-size:11px}
+        .btn-danger:hover{opacity:0.9;transform:translateY(-1px)}
+        .btn-sm{padding:5px 10px;font-size:11px;border-radius:6px}
 
-        .search-bar{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
-        .search-bar input{flex:1;min-width:170px;padding:7px 12px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-input);color:var(--text-primary);font-size:12px;transition:var(--transition)}
+        /* ========== SEARCH BAR ========== */
+        .search-bar{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap;align-items:center}
+        .search-bar input{flex:1;min-width:180px;padding:9px 14px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-input);color:var(--text-primary);font-size:13px;transition:var(--transition);font-family:inherit}
         .search-bar input::placeholder{color:var(--text-muted)}
-        .search-bar input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 2px var(--accent-light)}
-        .search-bar select{padding:7px 12px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-input);color:var(--text-primary);font-size:12px;cursor:pointer;transition:var(--transition)}
+        .search-bar input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-light)}
+        .search-bar select{padding:9px 14px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-input);color:var(--text-primary);font-size:13px;cursor:pointer;transition:var(--transition);font-family:inherit}
         .search-bar select:focus{outline:none;border-color:var(--accent)}
         .search-bar select option{background:var(--bg-surface);color:var(--text-primary)}
 
+        /* ========== TABLES ========== */
         table{width:100%;border-collapse:collapse}
-        th,td{padding:9px 14px;text-align:left;border-bottom:1px solid var(--border);font-size:12px}
-        th{color:var(--text-muted);font-weight:600;font-size:10px;text-transform:uppercase;letter-spacing:0.6px;background:var(--bg-input);position:sticky;top:0}
+        th,td{padding:13px 18px;text-align:left;border-bottom:1px solid var(--border);font-size:12.5px;vertical-align:middle}
+        th{color:var(--text-muted);font-weight:600;font-size:10.5px;text-transform:uppercase;letter-spacing:0.7px;background:var(--bg-input);position:sticky;top:0}
+        tr{transition:var(--transition-fast)}
         tr:hover{background:var(--accent-light)}
         td{color:var(--text-primary)}
+        td .actions{display:flex;gap:4px;align-items:center;flex-wrap:nowrap}
+        td .actions .btn{white-space:nowrap}
 
-        .status{padding:3px 9px;border-radius:20px;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.3px;display:inline-flex;align-items:center;gap:5px}
-        .status::before{content:'';width:5px;height:5px;border-radius:50%;background:currentColor}
+        /* ========== STATUS BADGES ========== */
+        .status{padding:4px 10px;border-radius:20px;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.4px;display:inline-flex;align-items:center;gap:5px}
+        .status::before{content:'';width:6px;height:6px;border-radius:50%;background:currentColor}
         .status-active,.status-available,.status-resolved{background:var(--success-bg);color:var(--success)}
         .status-pending,.status-busy,.status-in-progress{background:var(--warning-bg);color:var(--warning)}
         .status-inactive,.status-on-leave,.status-closed{background:var(--danger-bg);color:var(--danger)}
 
-        .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(9,30,66,0.35);backdrop-filter:blur(3px);justify-content:center;align-items:center;z-index:1000}
+        /* ========== MODALS ========== */
+        .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);backdrop-filter:blur(6px);justify-content:center;align-items:center;z-index:1000}
         .modal.active{display:flex}
-        .modal-content{background:var(--bg-surface);border-radius:var(--radius-lg);padding:0;width:92%;max-width:540px;border:1px solid var(--border);box-shadow:var(--shadow-lg);max-height:90vh;overflow-y:auto;animation:modalIn 0.18s ease}
-        @keyframes modalIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
-        .modal-header{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid var(--border)}
-        .modal-header h2{font-size:14px;font-weight:600;color:var(--text-primary)}
-        .close-btn{background:none;border:none;color:var(--text-muted);font-size:18px;cursor:pointer;width:26px;height:26px;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;transition:var(--transition)}
+        .modal-content{background:var(--bg-surface);border-radius:var(--radius-xl);padding:0;width:92%;max-width:560px;border:1px solid var(--border);box-shadow:var(--shadow-xl);max-height:90vh;overflow-y:auto;animation:modalSlideUp 0.3s cubic-bezier(0.16,1,0.3,1)}
+        .modal-header{display:flex;justify-content:space-between;align-items:center;padding:20px 24px;border-bottom:1px solid var(--border)}
+        .modal-header h2{font-size:16px;font-weight:700;color:var(--text-primary);letter-spacing:-0.2px}
+        .close-btn{background:var(--bg-input);border:none;color:var(--text-muted);font-size:18px;cursor:pointer;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:var(--transition)}
         .close-btn:hover{background:var(--danger-bg);color:var(--danger)}
-        .form-group{margin-bottom:12px}
-        .form-group label{display:block;margin-bottom:3px;color:var(--text-secondary);font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:0.4px}
-        .form-group input,.form-group textarea,.form-group select{width:100%;padding:7px 11px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-input);color:var(--text-primary);font-size:12px;transition:var(--transition)}
+        .form-group{margin-bottom:16px}
+        .form-group label{display:block;margin-bottom:5px;color:var(--text-secondary);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px}
+        .form-group input,.form-group textarea,.form-group select{width:100%;padding:9px 14px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-input);color:var(--text-primary);font-size:13px;transition:var(--transition);font-family:inherit}
         .form-group select option{background:var(--bg-surface);color:var(--text-primary)}
-        .form-group input:focus,.form-group textarea:focus,.form-group select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 2px var(--accent-light)}
-        .form-group textarea{resize:vertical;min-height:68px}
-        .form-actions{display:flex;gap:8px;justify-content:flex-end;padding:12px 18px;border-top:1px solid var(--border)}
+        .form-group input:focus,.form-group textarea:focus,.form-group select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-light)}
+        .form-group textarea{resize:vertical;min-height:72px}
+        .form-actions{display:flex;gap:10px;justify-content:flex-end;padding:18px 24px;border-top:1px solid var(--border);background:var(--bg-input)}
 
-        .empty-state{text-align:center;padding:44px 20px;color:var(--text-muted)}
-        .empty-state h3{margin-bottom:4px;color:var(--text-secondary);font-weight:600;font-size:12.5px}
+        /* ========== EMPTY STATE ========== */
+        .empty-state{text-align:center;padding:56px 24px;color:var(--text-muted)}
+        .empty-state .empty-icon{font-size:40px;margin-bottom:12px;opacity:0.4}
+        .empty-state h3{margin-bottom:4px;color:var(--text-secondary);font-weight:600;font-size:13px}
 
-        .page{display:none;animation:fadeIn 0.2s ease}
-        @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+        /* ========== PAGES ========== */
+        .page{display:none;animation:fadeIn 0.3s ease}
         .page.active{display:block}
 
-        .actions{display:flex;gap:4px}
+        .actions{display:flex;gap:6px;align-items:center;flex-wrap:nowrap}
 
-        .toast{position:fixed;bottom:20px;right:20px;background:var(--accent);color:#fff;padding:10px 18px;border-radius:var(--radius);font-weight:600;font-size:12px;transform:translateY(80px);opacity:0;transition:var(--transition);z-index:2000;box-shadow:var(--shadow-lg)}
+        /* ========== TOAST ========== */
+        .toast{position:fixed;bottom:24px;right:24px;background:var(--accent-gradient);color:#fff;padding:12px 22px;border-radius:var(--radius-lg);font-weight:600;font-size:13px;transform:translateY(80px);opacity:0;transition:all 0.35s cubic-bezier(0.16,1,0.3,1);z-index:2000;box-shadow:var(--shadow-lg)}
         .toast.show{transform:translateY(0);opacity:1}
 
+        /* ========== RECENT ACTIVITY ========== */
         .recent-activity{max-height:300px;overflow-y:auto}
-        .activity-item{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--border)}
+        .activity-item{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--border);transition:var(--transition-fast)}
         .activity-item:last-child{border-bottom:none}
-        .activity-icon{width:30px;height:30px;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0}
+        .activity-item:hover{background:var(--accent-light);margin:0 -24px;padding:12px 24px;border-radius:var(--radius)}
+        .activity-icon{width:34px;height:34px;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
         .activity-icon.add{background:var(--success-bg);color:var(--success)}
         .activity-icon.edit{background:var(--accent-light);color:var(--accent)}
         .activity-icon.delete{background:var(--danger-bg);color:var(--danger)}
-        .activity-info h4{font-size:11.5px;font-weight:500;margin-bottom:1px;color:var(--text-primary)}
+        .activity-info h4{font-size:12px;font-weight:500;margin-bottom:2px;color:var(--text-primary)}
         .activity-info p{font-size:10px;color:var(--text-muted)}
 
-        .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+        .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 
-        .sale-item-row select,.sale-item-row input{padding:6px 10px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-input);color:var(--text-primary);font-size:11.5px}
+        .sale-item-row select,.sale-item-row input{padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-input);color:var(--text-primary);font-size:12px;font-family:inherit}
         .sale-item-row select option{background:var(--bg-surface);color:var(--text-primary)}
 
-        ::-webkit-scrollbar{width:5px;height:5px}
+        /* ========== SCROLLBAR ========== */
+        ::-webkit-scrollbar{width:6px;height:6px}
         ::-webkit-scrollbar-track{background:transparent}
-        ::-webkit-scrollbar-thumb{background:var(--text-muted);border-radius:10px}
-        ::-webkit-scrollbar-thumb:hover{background:var(--text-secondary)}
+        ::-webkit-scrollbar-thumb{background:var(--border);border-radius:10px}
+        ::-webkit-scrollbar-thumb:hover{background:var(--text-muted)}
 
-        @media(max-width:900px){
+        /* ========== RESPONSIVE ========== */
+        @media(max-width:1024px){
             .sidebar{transform:translateX(-100%)}
-            .sidebar.open{transform:translateX(0)}
+            .sidebar.open{transform:translateX(0);box-shadow:var(--shadow-xl)}
             .main-area{margin-left:0}
+            .menu-toggle{display:flex}
+            .topbar-search{display:none}
+        }
+        @media(max-width:768px){
             .dashboard{grid-template-columns:1fr 1fr}
+            .content{padding:20px}
+            .topbar{padding:0 16px}
         }
         @media(max-width:600px){
             .dashboard{grid-template-columns:1fr}
             .grid-2{grid-template-columns:1fr}
             .search-bar{flex-direction:column}
             .search-bar input,.search-bar select{width:100%;min-width:0}
-            .modal-content{width:96%;padding:0}
+            .modal-content{width:96%;border-radius:var(--radius-lg)}
             .section-header{flex-direction:column;gap:8px;align-items:flex-start}
             .section-header .btn{width:100%}
             .form-actions{flex-direction:column}
             .form-actions .btn{width:100%}
             .sale-item-row{grid-template-columns:1fr 1fr!important;gap:6px!important}
             .sale-item-row select{grid-column:1/-1}
+            .login-card{width:92%;padding:32px 24px}
         }
     </style>
 </head>
 <body>
 
+<!-- Welcome Overlay -->
+<div id="welcome-overlay" class="welcome-overlay">
+    <div class="welcome-logo">DC</div>
+    <div class="welcome-text">Welcome, Admin!</div>
+    <div class="welcome-sub">Diamond Computers CRM</div>
+</div>
+
 <!-- Login Screen -->
-<div id="login-screen" style="position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,#1a1f36 0%,#2f365a 100%);display:flex;align-items:center;justify-content:center;z-index:9999">
-    <div style="background:#fff;border-radius:8px;padding:40px;width:380px;box-shadow:0 20px 60px rgba(0,0,0,0.3)">
-        <div style="text-align:center;margin-bottom:30px">
-            <div style="width:60px;height:60px;background:var(--accent,#0052cc);border-radius:8px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-weight:800;font-size:22px;color:#fff">DC</div>
-            <h1 style="font-size:20px;font-weight:700;color:#1a1f36;margin-bottom:4px">Diamond Computers</h1>
-            <p style="font-size:12px;color:#5e6278">CRM System Login</p>
+<div id="login-screen" class="login-bg">
+    <div class="login-card">
+        <div class="login-logo"><img src="logo.png" alt="DC" style="width:56px;height:56px;object-fit:contain;border-radius:14px" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none">DC</span></div>
+        <h1>Diamond Computers</h1>
+        <p class="login-sub">CRM System Login</p>
+        <div id="login-error"></div>
+        <div style="margin-bottom:18px">
+            <label>Username</label>
+            <input type="text" id="login-user" placeholder="Enter username">
         </div>
-        <div id="login-error" style="background:#fff3f3;border:1px solid #de350b;border-radius:4px;padding:10px 14px;margin-bottom:16px;font-size:12px;color:#de350b;display:none"></div>
-        <div style="margin-bottom:16px">
-            <label style="display:block;margin-bottom:4px;font-size:11px;font-weight:600;color:#5e6278;text-transform:uppercase;letter-spacing:0.4px">Username</label>
-            <input type="text" id="login-user" placeholder="Enter username" style="width:100%;padding:10px 14px;border:1px solid #e3e6ed;border-radius:4px;font-size:13px;background:#f5f6f8;transition:all 0.15s ease" onfocus="this.style.borderColor='#0052cc';this.style.boxShadow='0 0 0 2px rgba(0,82,204,0.1)'" onblur="this.style.borderColor='#e3e6ed';this.style.boxShadow='none'">
+        <div style="margin-bottom:28px">
+            <label>Password</label>
+            <input type="password" id="login-pass" placeholder="Enter password">
         </div>
-        <div style="margin-bottom:24px">
-            <label style="display:block;margin-bottom:4px;font-size:11px;font-weight:600;color:#5e6278;text-transform:uppercase;letter-spacing:0.4px">Password</label>
-            <input type="password" id="login-pass" placeholder="Enter password" style="width:100%;padding:10px 14px;border:1px solid #e3e6ed;border-radius:4px;font-size:13px;background:#f5f6f8;transition:all 0.15s ease" onfocus="this.style.borderColor='#0052cc';this.style.boxShadow='0 0 0 2px rgba(0,82,204,0.1)'" onblur="this.style.borderColor='#e3e6ed';this.style.boxShadow='none'">
-        </div>
-        <button onclick="doLogin()" style="width:100%;padding:11px;background:#0052cc;color:#fff;border:none;border-radius:4px;font-size:13px;font-weight:600;cursor:pointer;transition:all 0.15s ease" onmouseover="this.style.background='#0043a3'" onmouseout="this.style.background='#0052cc'">Sign In</button>
-        <p style="text-align:center;margin-top:16px;font-size:10px;color:#9298a8">Authorized personnel only</p>
+        <button class="login-btn" onclick="doLogin()">Sign In</button>
+        <p class="login-footer">🔒 Authorized personnel only</p>
     </div>
 </div>
 
@@ -242,69 +353,124 @@
         <nav class="sidebar-nav">
             <div class="sidebar-section">
                 <div class="sidebar-label">Main</div>
-                <button class="sidebar-link active" onclick="showPage('dashboard')"><span class="icon">📊</span> Dashboard</button>
-                <button class="sidebar-link" onclick="showPage('customers')"><span class="icon">👥</span> Customers</button>
-                <button class="sidebar-link" onclick="showPage('engineers')"><span class="icon">🔧</span> Engineers</button>
-                <button class="sidebar-link" onclick="showPage('issues')"><span class="icon">📋</span> Issues</button>
+                <button class="sidebar-link active" onclick="showPage('dashboard')"><span class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg></span> Dashboard</button>
+                <button class="sidebar-link" onclick="showPage('customers')"><span class="icon"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></span> Customers</button>
+                <button class="sidebar-link" onclick="showPage('engineers')"><span class="icon"><svg viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg></span> Engineers</button>
+                <button class="sidebar-link" onclick="showPage('issues')"><span class="icon"><svg viewBox="0 0 24 24"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm-2 14l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg></span> Issues</button>
             </div>
             <div class="sidebar-section">
                 <div class="sidebar-label">Business</div>
-                <button class="sidebar-link" onclick="showPage('sales')"><span class="icon">💰</span> Sales</button>
-                <button class="sidebar-link" onclick="showPage('products')"><span class="icon">📦</span> Products</button>
-                <button class="sidebar-link" onclick="showPage('notes')"><span class="icon">📝</span> Notes</button>
+                <button class="sidebar-link" onclick="showPage('sales')"><span class="icon"><svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg></span> Sales</button>
+                <button class="sidebar-link" onclick="showPage('products')"><span class="icon"><svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9h-7V4h7v7z"/></svg></span> Products</button>
+                <button class="sidebar-link" onclick="showPage('notes')"><span class="icon"><svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm-3 15H7v-2h4v2zm3-4H7v-2h7v2zm0-4h-4V5h4v4z"/></svg></span> Notes</button>
             </div>
             <div class="sidebar-section">
                 <div class="sidebar-label">System</div>
-                <button class="sidebar-link" onclick="exportData()"><span class="icon">📤</span> Export Data</button>
-                <button class="sidebar-link" onclick="importData()"><span class="icon">📥</span> Import Data</button>
+                <button class="sidebar-link" onclick="exportDataJSON()"><span class="icon"><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg></span> Export JSON</button>
+                <button class="sidebar-link" onclick="exportDataPDF()"><span class="icon"><svg viewBox="0 0 24 24"><path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8.5 7.5c0 .83-.67 1.5-1.5 1.5H9v2H7.5V7H10c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5h-2.5V7H15c.83 0 1.5.67 1.5 1.5v3zm4-3H19v1h1.5V11H19v2h-1.5V7h3v1.5zM9 9.5h1v-1H9v1zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm10 5.5h1v-3h-1v3z"/></svg></span> Export PDF</button>
+                <button class="sidebar-link" onclick="importData()"><span class="icon"><svg viewBox="0 0 24 24"><path d="M5 20h14v-2H5v2zm7-18L5.33 9h3.84v4h3.66V9h3.84L12 2z"/></svg></span> Import Data</button>
             </div>
         </nav>
         <div class="sidebar-footer">
-            <button class="sidebar-link" onclick="toggleTheme()" id="theme-toggle"><span class="icon">🌙</span> Dark Mode</button>
+            <div class="sidebar-user">
+                <div class="sidebar-user-avatar">AD</div>
+                <div class="sidebar-user-info">
+                    <div class="name">Admin User</div>
+                    <div class="role">Administrator</div>
+                </div>
+            </div>
+            <button class="sidebar-link" onclick="toggleTheme()" id="theme-toggle"><span class="icon" id="theme-icon"><svg viewBox="0 0 24 24" id="theme-svg"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.03 0-5.5-2.47-5.5-5.5 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/></svg></span> <span class="link-text" id="theme-label">Dark Mode</span></button>
+            <button class="sidebar-link" onclick="doLogout()" id="logout-btn"><span class="icon"><svg viewBox="0 0 24 24"><path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/></svg></span> <span class="link-text">Logout</span></button>
         </div>
     </aside>
     <div class="main-area">
         <div class="topbar">
             <div class="topbar-left">
+                <button class="menu-toggle" onclick="toggleSidebar()" title="Toggle Menu">☰</button>
                 <span class="topbar-title" id="topbar-title">Dashboard</span>
+                <span class="topbar-breadcrumb" id="topbar-breadcrumb"><span>Home</span> <span class="sep">/</span> Dashboard</span>
             </div>
             <div class="topbar-right">
-                <button class="topbar-btn" onclick="toggleTheme()" title="Toggle Theme">🌙</button>
+                <div class="topbar-search" onclick="document.querySelector('.search-bar input')?.focus()">
+                    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                    <span>Search...</span>
+                </div>
+                <button class="topbar-btn" onclick="toggleTheme()" title="Toggle Theme" id="topbar-theme-btn">
+                    <svg viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.03 0-5.5-2.47-5.5-5.5 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/></svg>
+                </button>
+                <div class="topbar-avatar" title="Admin User">AD</div>
             </div>
         </div>
         <div class="content">
         <!-- Dashboard Page -->
         <div id="dashboard-page" class="page active">
             <div class="dashboard">
-                <div class="stat-card" style="cursor: pointer;" onclick="showPage('customers')">
-                    <h3>Total Customers</h3>
+                <div class="stat-card" style="cursor: pointer; animation-delay:0.05s" onclick="showPage('customers')">
+                    <div class="stat-card-header">
+                        <h3>Total Customers</h3>
+                        <div class="stat-card-icon blue">
+                            <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                        </div>
+                    </div>
                     <div class="value" id="total-customers">0</div>
                 </div>
-                <div class="stat-card" style="cursor: pointer;" onclick="showPage('customers')">
-                    <h3>Active Customers</h3>
+                <div class="stat-card" style="cursor: pointer; animation-delay:0.1s" onclick="showPage('customers')">
+                    <div class="stat-card-header">
+                        <h3>Active Customers</h3>
+                        <div class="stat-card-icon green">
+                            <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                        </div>
+                    </div>
                     <div class="value" id="active-customers">0</div>
                 </div>
-                <div class="stat-card" style="cursor: pointer;" onclick="showPage('engineers')">
-                    <h3>Total Engineers</h3>
+                <div class="stat-card" style="cursor: pointer; animation-delay:0.15s" onclick="showPage('engineers')">
+                    <div class="stat-card-header">
+                        <h3>Total Engineers</h3>
+                        <div class="stat-card-icon orange">
+                            <svg viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>
+                        </div>
+                    </div>
                     <div class="value" id="total-engineers">0</div>
                 </div>
-                <div class="stat-card" style="cursor: pointer;" onclick="showPage('issues')">
-                    <h3>Open Issues</h3>
+                <div class="stat-card" style="cursor: pointer; animation-delay:0.2s" onclick="showPage('issues')">
+                    <div class="stat-card-header">
+                        <h3>Open Issues</h3>
+                        <div class="stat-card-icon red">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        </div>
+                    </div>
                     <div class="value" id="open-issues">0</div>
+                    <div class="trend" id="open-issues-trend"></div>
                 </div>
-                <div class="stat-card" style="cursor: pointer;" onclick="showPage('products')">
-                    <h3>Total Products</h3>
+                <div class="stat-card" style="cursor: pointer; animation-delay:0.25s" onclick="showPage('products')">
+                    <div class="stat-card-header">
+                        <h3>Total Products</h3>
+                        <div class="stat-card-icon cyan">
+                            <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9h-7V4h7v7z"/></svg>
+                        </div>
+                    </div>
                     <div class="value" id="total-products">0</div>
                 </div>
-                <div class="stat-card" style="cursor: pointer;" onclick="showPage('notes')">
-                    <h3>Total Notes</h3>
+                <div class="stat-card" style="cursor: pointer; animation-delay:0.3s" onclick="showPage('notes')">
+                    <div class="stat-card-header">
+                        <h3>Total Notes</h3>
+                        <div class="stat-card-icon purple">
+                            <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm-3 15H7v-2h4v2zm3-4H7v-2h7v2zm0-4h-4V5h4v4z"/></svg>
+                        </div>
+                    </div>
                     <div class="value" id="total-notes">0</div>
                 </div>
-                <div class="stat-card" style="cursor: pointer;" onclick="showPage('sales')">
-                    <h3>Total Sales</h3>
+                <div class="stat-card" style="cursor: pointer; animation-delay:0.35s" onclick="showPage('sales')">
+                    <div class="stat-card-header">
+                        <h3>Total Sales</h3>
+                        <div class="stat-card-icon pink">
+                            <svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+                        </div>
+                    </div>
                     <div class="value" id="total-sales">0</div>
                 </div>
             </div>
+
 
             <div class="grid-2">
                 <div class="section">
@@ -313,7 +479,9 @@
                     </div>
                     <div id="recent-customers">
                         <div class="empty-state">
-                            <p>No customers yet</p>
+                            <div class="empty-icon">👥</div>
+                            <h3>No customers yet</h3>
+                            <p>Add your first customer to get started</p>
                         </div>
                     </div>
                 </div>
@@ -324,7 +492,9 @@
                     </div>
                     <div id="recent-activity" class="recent-activity">
                         <div class="empty-state">
-                            <p>No activity yet</p>
+                            <div class="empty-icon">📋</div>
+                            <h3>No activity yet</h3>
+                            <p>Actions will appear here as you use the CRM</p>
                         </div>
                     </div>
                 </div>
@@ -370,6 +540,7 @@
                 </table>
 
                 <div id="no-customers" class="empty-state">
+                    <div class="empty-icon">👥</div>
                     <h3>No customers found</h3>
                     <p>Click "Add Customer" to get started</p>
                 </div>
@@ -411,6 +582,7 @@
                 </table>
 
                 <div id="no-engineers" class="empty-state">
+                    <div class="empty-icon">🔧</div>
                     <h3>No engineers found</h3>
                     <p>Click "Add Engineer" to get started</p>
                 </div>
@@ -447,6 +619,7 @@
                 </div>
 
                 <div id="no-issues" class="empty-state">
+                    <div class="empty-icon">📋</div>
                     <h3>No issues found</h3>
                     <p>Click "Raise Issue" to get started</p>
                 </div>
@@ -488,6 +661,7 @@
                 </table>
 
                 <div id="no-sales" class="empty-state">
+                    <div class="empty-icon">💰</div>
                     <h3>No sales found</h3>
                     <p>Click "New Sale" to create a receipt</p>
                 </div>
@@ -528,6 +702,7 @@
                 </table>
 
                 <div id="no-products" class="empty-state">
+                    <div class="empty-icon">📦</div>
                     <h3>No products found</h3>
                     <p>Click "Add Product" to get started</p>
                 </div>
@@ -556,6 +731,7 @@
                 </div>
 
                 <div id="no-notes" class="empty-state">
+                    <div class="empty-icon">📝</div>
                     <h3>No notes found</h3>
                     <p>Click "Add Note" to get started</p>
                 </div>
@@ -572,43 +748,45 @@
             </div>
             <form id="customer-form" onsubmit="saveCustomer(event)">
                 <input type="hidden" id="customer-id">
-                <div class="form-group">
-                    <label>Full Name *</label>
-                    <input type="text" id="customer-name" required>
-                </div>
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" id="customer-email">
-                </div>
-                <div class="form-group">
-                    <label>Phone *</label>
-                    <input type="tel" id="customer-phone" required>
-                </div>
-                <div class="form-group">
-                    <label>Company</label>
-                    <input type="text" id="customer-company">
-                </div>
-                <div class="form-group">
-                    <label>Address</label>
-                    <textarea id="customer-address"></textarea>
-                </div>
-                <div class="form-group">
-                    <label>Status</label>
-                    <select id="customer-status">
-                        <option value="Active">Active</option>
-                        <option value="Pending">Pending</option>
-                        <option value="Inactive">Inactive</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Assign Engineer</label>
-                    <select id="customer-engineer">
-                        <option value="">Unassigned</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Notes</label>
-                    <textarea id="customer-notes" placeholder="Any additional notes..."></textarea>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Full Name *</label>
+                        <input type="text" id="customer-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="customer-email">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone *</label>
+                        <input type="tel" id="customer-phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Company</label>
+                        <input type="text" id="customer-company">
+                    </div>
+                    <div class="form-group">
+                        <label>Address</label>
+                        <textarea id="customer-address"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Status</label>
+                        <select id="customer-status">
+                            <option value="Active">Active</option>
+                            <option value="Pending">Pending</option>
+                            <option value="Inactive">Inactive</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Assign Engineer</label>
+                        <select id="customer-engineer">
+                            <option value="">Unassigned</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Notes</label>
+                        <textarea id="customer-notes" placeholder="Any additional notes..."></textarea>
+                    </div>
                 </div>
                 <div class="form-actions">
                     <button type="button" class="btn btn-secondary" onclick="closeModal('customer-modal')">Cancel</button>
@@ -627,39 +805,41 @@
             </div>
             <form id="product-form" onsubmit="saveProduct(event)">
                 <input type="hidden" id="product-id">
-                <div class="form-group">
-                    <label>Product Name *</label>
-                    <input type="text" id="product-name" required>
-                </div>
-                <div class="form-group">
-                    <label>Category</label>
-                    <select id="product-category">
-                        <option value="Hardware">Hardware</option>
-                        <option value="Software">Software</option>
-                        <option value="Service">Service</option>
-                        <option value="Accessory">Accessory</option>
-                        <option value="Other">Other</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Price (₹) *</label>
-                    <input type="number" id="product-price" step="0.01" required>
-                </div>
-                <div class="form-group">
-                    <label>Stock</label>
-                    <input type="number" id="product-stock" value="0">
-                </div>
-                <div class="form-group">
-                    <label>Description</label>
-                    <textarea id="product-description"></textarea>
-                </div>
-                <div class="form-group">
-                    <label>Status</label>
-                    <select id="product-status">
-                        <option value="Available">Available</option>
-                        <option value="Out of Stock">Out of Stock</option>
-                        <option value="Discontinued">Discontinued</option>
-                    </select>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Product Name *</label>
+                        <input type="text" id="product-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select id="product-category">
+                            <option value="Hardware">Hardware</option>
+                            <option value="Software">Software</option>
+                            <option value="Service">Service</option>
+                            <option value="Accessory">Accessory</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Price (₹) *</label>
+                        <input type="number" id="product-price" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Stock</label>
+                        <input type="number" id="product-stock" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea id="product-description"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Status</label>
+                        <select id="product-status">
+                            <option value="Available">Available</option>
+                            <option value="Out of Stock">Out of Stock</option>
+                            <option value="Discontinued">Discontinued</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="form-actions">
                     <button type="button" class="btn btn-secondary" onclick="closeModal('product-modal')">Cancel</button>
@@ -678,31 +858,33 @@
             </div>
             <form id="note-form" onsubmit="saveNote(event)">
                 <input type="hidden" id="note-id">
-                <div class="form-group">
-                    <label>Title *</label>
-                    <input type="text" id="note-title" required>
-                </div>
-                <div class="form-group">
-                    <label>Related Customer</label>
-                    <select id="note-customer">
-                        <option value="">None</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Priority</label>
-                    <select id="note-priority">
-                        <option value="Low">Low</option>
-                        <option value="Medium">Medium</option>
-                        <option value="High">High</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Due Date</label>
-                    <input type="date" id="note-due-date">
-                </div>
-                <div class="form-group">
-                    <label>Content *</label>
-                    <textarea id="note-content" required></textarea>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Title *</label>
+                        <input type="text" id="note-title" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Related Customer</label>
+                        <select id="note-customer">
+                            <option value="">None</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Priority</label>
+                        <select id="note-priority">
+                            <option value="Low">Low</option>
+                            <option value="Medium">Medium</option>
+                            <option value="High">High</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Due Date</label>
+                        <input type="date" id="note-due-date">
+                    </div>
+                    <div class="form-group">
+                        <label>Content *</label>
+                        <textarea id="note-content" required></textarea>
+                    </div>
                 </div>
                 <div class="form-actions">
                     <button type="button" class="btn btn-secondary" onclick="closeModal('note-modal')">Cancel</button>
@@ -721,41 +903,43 @@
             </div>
             <form id="engineer-form" onsubmit="saveEngineer(event)">
                 <input type="hidden" id="engineer-id">
-                <div class="form-group">
-                    <label>Full Name *</label>
-                    <input type="text" id="engineer-name" required>
-                </div>
-                <div class="form-group">
-                    <label>Email *</label>
-                    <input type="email" id="engineer-email" required>
-                </div>
-                <div class="form-group">
-                    <label>Phone *</label>
-                    <input type="tel" id="engineer-phone" required>
-                </div>
-                <div class="form-group">
-                    <label>Specialization *</label>
-                    <select id="engineer-specialization" required>
-                        <option value="Hardware Repair">Hardware Repair</option>
-                        <option value="Software Support">Software Support</option>
-                        <option value="Networking">Networking</option>
-                        <option value="Data Recovery">Data Recovery</option>
-                        <option value="Virus/Malware Removal">Virus/Malware Removal</option>
-                        <option value="Installation">Installation</option>
-                        <option value="General IT">General IT</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Status</label>
-                    <select id="engineer-status">
-                        <option value="Available">Available</option>
-                        <option value="Busy">Busy</option>
-                        <option value="On Leave">On Leave</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Notes</label>
-                    <textarea id="engineer-notes" placeholder="Any additional notes..."></textarea>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Full Name *</label>
+                        <input type="text" id="engineer-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email *</label>
+                        <input type="email" id="engineer-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone *</label>
+                        <input type="tel" id="engineer-phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Specialization *</label>
+                        <select id="engineer-specialization" required>
+                            <option value="Hardware Repair">Hardware Repair</option>
+                            <option value="Software Support">Software Support</option>
+                            <option value="Networking">Networking</option>
+                            <option value="Data Recovery">Data Recovery</option>
+                            <option value="Virus/Malware Removal">Virus/Malware Removal</option>
+                            <option value="Installation">Installation</option>
+                            <option value="General IT">General IT</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Status</label>
+                        <select id="engineer-status">
+                            <option value="Available">Available</option>
+                            <option value="Busy">Busy</option>
+                            <option value="On Leave">On Leave</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Notes</label>
+                        <textarea id="engineer-notes" placeholder="Any additional notes..."></textarea>
+                    </div>
                 </div>
                 <div class="form-actions">
                     <button type="button" class="btn btn-secondary" onclick="closeModal('engineer-modal')">Cancel</button>
@@ -774,57 +958,59 @@
             </div>
             <form id="issue-form" onsubmit="saveIssue(event)">
                 <input type="hidden" id="issue-id">
-                <div class="form-group">
-                    <label>Issue Title *</label>
-                    <input type="text" id="issue-title" required>
-                </div>
-                <div class="form-group">
-                    <label>Customer *</label>
-                    <select id="issue-customer" required>
-                        <option value="">Select Customer</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Related Product</label>
-                    <select id="issue-product">
-                        <option value="">None</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Priority</label>
-                    <select id="issue-priority">
-                        <option value="Low">Low</option>
-                        <option value="Medium">Medium</option>
-                        <option value="High">High</option>
-                        <option value="Critical">Critical</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Status</label>
-                    <select id="issue-status">
-                        <option value="Open">Open</option>
-                        <option value="In Progress">In Progress</option>
-                        <option value="Resolved">Resolved</option>
-                        <option value="Closed">Closed</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Assign Engineer</label>
-                    <select id="issue-engineer" onchange="toggleEstimateField()">
-                        <option value="">Unassigned</option>
-                    </select>
-                </div>
-                <div class="form-group" id="estimate-group" style="display:block">
-                    <label>Estimated Value (₹) *</label>
-                    <input type="number" id="issue-estimate" step="0.01" placeholder="Service quotation amount">
-                </div>
-                <div class="form-group">
-                    <label>Issue Description *</label>
-                    <textarea id="issue-description" required placeholder="Describe the issue in detail..."></textarea>
-                </div>
-                <div class="form-group">
-                    <label>Resolution Notes</label>
-                    <textarea id="issue-resolution" placeholder="Resolution steps taken..."></textarea>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Issue Title *</label>
+                        <input type="text" id="issue-title" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Customer *</label>
+                        <select id="issue-customer" required>
+                            <option value="">Select Customer</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Related Product</label>
+                        <select id="issue-product">
+                            <option value="">None</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Priority</label>
+                        <select id="issue-priority">
+                            <option value="Low">Low</option>
+                            <option value="Medium">Medium</option>
+                            <option value="High">High</option>
+                            <option value="Critical">Critical</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Status</label>
+                        <select id="issue-status">
+                            <option value="Open">Open</option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Resolved">Resolved</option>
+                            <option value="Closed">Closed</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Assign Engineer</label>
+                        <select id="issue-engineer" onchange="toggleEstimateField()">
+                            <option value="">Unassigned</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="estimate-group" style="display:block">
+                        <label>Estimated Value (₹) *</label>
+                        <input type="number" id="issue-estimate" step="0.01" placeholder="Service quotation amount">
+                    </div>
+                    <div class="form-group">
+                        <label>Issue Description *</label>
+                        <textarea id="issue-description" required placeholder="Describe the issue in detail..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Resolution Notes</label>
+                        <textarea id="issue-resolution" placeholder="Resolution steps taken..."></textarea>
+                    </div>
                 </div>
                 <div class="form-actions">
                     <button type="button" class="btn btn-secondary" onclick="closeModal('issue-modal')">Cancel</button>
@@ -1039,7 +1225,13 @@
             </div>
             <div id="receipt-content" style="background: #fff; color: #000; padding: 30px; border-radius: 8px; font-family: 'Segoe UI', Arial, sans-serif; font-size: 12px; line-height: 1.5;">
             </div>
-            <div class="form-actions" style="margin-top: 15px;">
+            <div style="padding:12px 22px;border-top:1px solid var(--border)">
+                <div class="form-group" style="margin-bottom:0">
+                    <label>Custom Message (optional — sent with receipt via WhatsApp)</label>
+                    <textarea id="receipt-whatsapp-msg" placeholder="e.g. Thank you for your purchase! Your receipt is attached." style="width:100%;padding:9px 14px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-input);color:var(--text-primary);font-size:13px;font-family:inherit;resize:vertical;min-height:50px"></textarea>
+                </div>
+            </div>
+            <div class="form-actions" style="margin-top:0;">
                 <button type="button" class="btn btn-secondary" onclick="closeModal('receipt-modal')">Close</button>
                 <button type="button" class="btn btn-primary" onclick="downloadReceiptPDF()">📥 Download PDF</button>
                 <button type="button" class="btn btn-primary" id="send-whatsapp-btn" onclick="sendReceiptWhatsApp()">📱 Send to WhatsApp</button>
@@ -1079,11 +1271,18 @@
             var pass = document.getElementById('login-pass').value;
             var err = document.getElementById('login-error');
             if (user === 'Diamond' && pass === 'Diamond@1127') {
-                document.getElementById('login-screen').style.display = 'none';
-                document.getElementById('app-main').style.display = 'flex';
                 localStorage.setItem('dc_logged_in', '1');
-                initTheme();
-                renderDashboard();
+                var welcome = document.getElementById('welcome-overlay');
+                welcome.classList.add('active');
+                welcome.style.display = 'flex';
+                setTimeout(function() {
+                    document.getElementById('login-screen').style.display = 'none';
+                    welcome.style.display = 'none';
+                    welcome.classList.remove('active');
+                    document.getElementById('app-main').style.display = 'flex';
+                    initTheme();
+                    renderDashboard();
+                }, 1800);
             } else {
                 err.textContent = 'Invalid username or password';
                 err.style.display = 'block';
@@ -1120,8 +1319,40 @@
         }
 
         function updateThemeIcon(theme) {
-            const btn = document.getElementById('theme-toggle');
-            btn.textContent = theme === 'dark' ? '☀️' : '🌙';
+            const label = document.getElementById('theme-label');
+            if (label) label.textContent = theme === 'dark' ? 'Light Mode' : 'Dark Mode';
+            const sidebarSvg = document.getElementById('theme-svg');
+            if (sidebarSvg) {
+                if (theme === 'dark') {
+                    sidebarSvg.innerHTML = '<path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm-1.41-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM6.05 18.37c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41.39.39 1.03.39 1.41 0l1.06-1.06z"/>';
+                } else {
+                    sidebarSvg.innerHTML = '<path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.03 0-5.5-2.47-5.5-5.5 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>';
+                }
+            }
+            const topbarBtn = document.getElementById('topbar-theme-btn');
+            if (topbarBtn) {
+                if (theme === 'dark') {
+                    topbarBtn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm-1.41-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM6.05 18.37c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41.39.39 1.03.39 1.41 0l1.06-1.06z"/></svg>';
+                } else {
+                    topbarBtn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.03 0-5.5-2.47-5.5-5.5 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/></svg>';
+                }
+            }
+        }
+
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('open');
+        }
+
+        function doLogout() {
+            if (confirm('Are you sure you want to logout?')) {
+                localStorage.removeItem('dc_logged_in');
+                document.getElementById('app-main').style.display = 'none';
+                document.getElementById('login-screen').style.display = 'flex';
+                document.getElementById('login-user').value = '';
+                document.getElementById('login-pass').value = '';
+                document.getElementById('login-error').style.display = 'none';
+            }
         }
 
         initTheme();
@@ -1249,6 +1480,11 @@
 
             const titles = {dashboard:'Dashboard',customers:'Customers',engineers:'Engineers',issues:'Issues',sales:'Sales',products:'Products',notes:'Notes'};
             document.getElementById('topbar-title').textContent = titles[page] || page;
+            document.getElementById('topbar-breadcrumb').innerHTML = `<span>Home</span> <span class="sep">/</span> ${titles[page] || page}`;
+
+            document.getElementById(`${page}-page`).style.animation = 'none';
+            void document.getElementById(`${page}-page`).offsetHeight;
+            document.getElementById(`${page}-page`).style.animation = 'fadeIn 0.3s ease';
 
             if (page === 'dashboard') renderDashboard();
             if (page === 'customers') renderCustomers();
@@ -1257,29 +1493,61 @@
             if (page === 'sales') renderSales();
             if (page === 'products') renderProducts();
             if (page === 'notes') renderNotes();
+
+            if (window.innerWidth <= 1024) {
+                document.querySelector('.sidebar').classList.remove('open');
+            }
+        }
+
+        function animateCounter(el, target, suffix) {
+            suffix = suffix || '';
+            let current = 0;
+            const step = Math.max(1, Math.ceil(target / 30));
+            const interval = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(interval);
+                }
+                el.textContent = current.toLocaleString('en-IN') + suffix;
+            }, 20);
         }
 
         function renderDashboard() {
             const activeCount = customers.filter(c => c.status === 'Active').length;
             const openIssuesCount = issues.filter(i => i.status === 'Open' || i.status === 'In Progress').length;
             const totalRevenue = sales.reduce((sum, s) => sum + (parseFloat(s.total) || 0), 0);
+            const saleCount = sales.length;
+            const avgSale = saleCount > 0 ? totalRevenue / saleCount : 0;
+            const pendingRevenue = sales.filter(s => s.paymentStatus === 'Pending' || s.paymentStatus === 'Partial').reduce((sum, s) => sum + (parseFloat(s.balance) || 0), 0);
 
-            document.getElementById('total-customers').textContent = customers.length;
-            document.getElementById('active-customers').textContent = activeCount;
-            document.getElementById('total-engineers').textContent = engineers.length;
-            document.getElementById('open-issues').textContent = openIssuesCount;
-            document.getElementById('total-products').textContent = products.length;
-            document.getElementById('total-notes').textContent = notes.length;
-            document.getElementById('total-sales').textContent = sales.length;
+            animateCounter(document.getElementById('total-customers'), customers.length);
+            animateCounter(document.getElementById('active-customers'), activeCount);
+            animateCounter(document.getElementById('total-engineers'), engineers.length);
+            animateCounter(document.getElementById('open-issues'), openIssuesCount);
+            animateCounter(document.getElementById('total-products'), products.length);
+            animateCounter(document.getElementById('total-notes'), notes.length);
+            animateCounter(document.getElementById('total-sales'), saleCount);
+
+            document.getElementById('total-revenue').textContent = '₹' + totalRevenue.toLocaleString('en-IN');
+            document.getElementById('avg-sale').textContent = '₹' + avgSale.toLocaleString('en-IN');
+            document.getElementById('pending-revenue').textContent = '₹' + pendingRevenue.toLocaleString('en-IN');
+
+            const openIssuesTrend = document.getElementById('open-issues-trend');
+            if (openIssuesTrend && openIssuesCount > 0) {
+                openIssuesTrend.textContent = '▲ ' + openIssuesCount + ' need attention';
+            }
 
             const recentDiv = document.getElementById('recent-customers');
             if (customers.length === 0) {
-                recentDiv.innerHTML = '<div class="empty-state"><p>No customers yet</p></div>';
+                recentDiv.innerHTML = '<div class="empty-state"><div class="empty-icon">👥</div><h3>No customers yet</h3><p>Add your first customer to get started</p></div>';
             } else {
                 const recent = customers.slice(-5).reverse();
                 recentDiv.innerHTML = recent.map(c => `
                     <div class="activity-item">
-                        <div class="activity-icon add">👤</div>
+                        <div class="activity-icon add">
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                        </div>
                         <div class="activity-info">
                             <h4>${escapeHtml(c.name)}</h4>
                             <p>${escapeHtml(c.email || c.phone)}</p>
@@ -1290,9 +1558,9 @@
 
             const activityDiv = document.getElementById('recent-activity');
             if (activities.length === 0) {
-                activityDiv.innerHTML = '<div class="empty-state"><p>No activity yet</p></div>';
+                activityDiv.innerHTML = '<div class="empty-state"><div class="empty-icon">📋</div><h3>No activity yet</h3><p>Actions will appear here as you use the CRM</p></div>';
             } else {
-                const icons = { add: '➕', edit: '✏️', delete: '🗑️' };
+                const icons = { add: '<svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>', edit: '<svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>', delete: '<svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>' };
                 activityDiv.innerHTML = activities.slice(0, 10).map(a => `
                     <div class="activity-item">
                         <div class="activity-icon ${a.type}">${icons[a.type]}</div>
@@ -1343,7 +1611,7 @@
                             <td>${escapeHtml(c.email || '-')}</td>
                             <td>${escapeHtml(c.phone || '-')}</td>
                             <td>${escapeHtml(c.company || '-')}</td>
-                            <td>${engineer ? `<span style="color: #00d9ff">${escapeHtml(engineer.name)}</span>` : '<span style="color: #666">Unassigned</span>'}</td>
+                            <td>${engineer ? `<span style="color:var(--accent)">${escapeHtml(engineer.name)}</span>` : '<span style="color:var(--text-muted)">Unassigned</span>'}</td>
                             <td><span class="status status-${c.status.toLowerCase()}">${c.status}</span></td>
                             <td class="actions">
                                 <button class="btn btn-secondary btn-sm" onclick="editCustomer('${c.id}')">Edit</button>
@@ -1501,7 +1769,7 @@ Please contact the customer at the earliest.
                     <tr>
                         <td><strong>${escapeHtml(p.name)}</strong></td>
                         <td>${escapeHtml(p.category || '-')}</td>
-                        <td>₹${parseFloat(p.price).toLocaleString('en-IN')}</td>
+                        <td><strong>₹${parseFloat(p.price).toLocaleString('en-IN')}</strong></td>
                         <td>${p.stock || 0}</td>
                         <td><span class="status status-${p.status === 'Available' ? 'active' : p.status === 'Out of Stock' ? 'pending' : 'inactive'}">${p.status}</span></td>
                         <td class="actions">
@@ -1615,19 +1883,19 @@ Please contact the customer at the earliest.
                     const priorityColors = { High: '#ff6b6b', Medium: '#ffc107', Low: '#00ff88' };
                     const customer = customers.find(c => c.id === n.customerId);
                     return `
-                        <div style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 20px; margin-bottom: 15px; border-left: 4px solid ${priorityColors[n.priority] || '#00d9ff'}">
-                            <div style="display: flex; justify-content: space-between; align-items: start;">
-                                <div style="flex: 1;">
-                                    <h3 style="margin-bottom: 8px;">${escapeHtml(n.title)}</h3>
-                                    <p style="color: #888; font-size: 14px; margin-bottom: 10px;">${escapeHtml(n.content)}</p>
-                                    <div style="display: flex; gap: 15px; font-size: 12px; color: #666;">
-                                        <span>Priority: ${n.priority}</span>
-                                        ${customer ? `<span>Customer: ${escapeHtml(customer.name)}</span>` : ''}
-                                        ${n.dueDate ? `<span>Due: ${formatDate(n.dueDate)}</span>` : ''}
+                        <div style="background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px 24px;margin-bottom:16px;border-left:4px solid ${priorityColors[n.priority] || 'var(--accent)'};transition:var(--transition)">
+                            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px">
+                                <div style="flex:1;min-width:0">
+                                    <h3 style="font-size:14px;font-weight:700;color:var(--text-primary);letter-spacing:-0.2px;margin:0 0 8px">${escapeHtml(n.title)}</h3>
+                                    <p style="color:var(--text-secondary);font-size:12px;margin-bottom:12px;line-height:1.6">${escapeHtml(n.content)}</p>
+                                    <div style="display:flex;gap:16px;font-size:11px;color:var(--text-muted);flex-wrap:wrap">
+                                        <span>Priority: <strong style="color:var(--text-primary)">${n.priority}</strong></span>
+                                        ${customer ? `<span>Customer: <strong style="color:var(--text-primary)">${escapeHtml(customer.name)}</strong></span>` : ''}
+                                        ${n.dueDate ? `<span>Due: <strong style="color:var(--text-primary)">${formatDate(n.dueDate)}</strong></span>` : ''}
                                         <span>Created: ${formatDate(n.createdAt)}</span>
                                     </div>
                                 </div>
-                                <div class="actions">
+                                <div class="actions" style="flex-shrink:0">
                                     <button class="btn btn-secondary btn-sm" onclick="editNote('${n.id}')">Edit</button>
                                     <button class="btn btn-danger btn-sm" onclick="deleteNote('${n.id}')">Delete</button>
                                 </div>
@@ -1767,8 +2035,10 @@ Please contact the customer at the earliest.
                     return `
                         <tr style="vertical-align: top;">
                             <td>
-                                <strong>${escapeHtml(e.name)}</strong>
-                                <div style="font-size: 11px; color: #888;">${escapeHtml(e.specialization || '')}</div>
+                                <div>
+                                    <strong>${escapeHtml(e.name)}</strong>
+                                    <div style="font-size: 11px; color: var(--text-muted);">${escapeHtml(e.specialization || '')}</div>
+                                </div>
                                 ${customersList}
                                 ${issuesList}
                             </td>
@@ -1777,9 +2047,9 @@ Please contact the customer at the earliest.
                             <td>${escapeHtml(e.specialization || '-')}</td>
                             <td>
                                 <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                                    <span style="color: #00d9ff;">${assignedCustomers.length} customers</span>
-                                    <span style="color: #00ff88;">${activeIssues.length} issues</span>
-                                    <span style="color: #888;">${resolvedIssues.length} done</span>
+                                    <span style="color: var(--info);font-weight:600;">${assignedCustomers.length} customers</span>
+                                    <span style="color: var(--accent);font-weight:600;">${activeIssues.length} issues</span>
+                                    <span style="color: var(--text-secondary);">${resolvedIssues.length} done</span>
                                 </div>
                             </td>
                             <td><span class="status status-${statusClass}">${e.status}</span></td>
@@ -1897,30 +2167,31 @@ Please contact the customer at the earliest.
                     const engineer = engineers.find(e => e.id === i.engineerId);
                     const product = products.find(p => p.id === i.productId);
 
-                    const priorityColors = { Critical: '#ff0000', High: '#ff6b6b', Medium: '#ffc107', Low: '#00ff88' };
-                    const statusColors = { Open: '#ff6b6b', 'In Progress': '#00d9ff', Resolved: '#00ff88', Closed: '#888' };
+                    const priorityColors = { Critical: 'var(--danger)', High: 'var(--warning)', Medium: 'var(--info)', Low: 'var(--success)' };
 
                     return `
-                        <div style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 16px 18px; margin-bottom: 10px; border-left: 4px solid ${priorityColors[i.priority] || 'var(--accent)'}">
-                            <div style="display: flex; justify-content: space-between; align-items: start;">
-                                <div style="flex: 1;">
-                                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
-                                        <h3 style="font-size:13px;font-weight:600;color:var(--text-primary)">${escapeHtml(i.title)}</h3>
-                                        ${i.tokenNo ? `<span style="background:#1a237e;color:#fff;font-size:9px;font-weight:700;padding:2px 7px;border-radius:3px;letter-spacing:0.5px;">${escapeHtml(i.tokenNo)}</span>` : ''}
-                                        <span class="status">${i.status}</span>
-                                        <span class="status">${i.priority}</span>
+                        <div style="background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px 24px;margin-bottom:16px;border-left:4px solid ${priorityColors[i.priority] || 'var(--accent)'};transition:var(--transition)">
+                            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px">
+                                <div style="flex:1;min-width:0">
+                                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap">
+                                        <h3 style="font-size:14px;font-weight:700;color:var(--text-primary);letter-spacing:-0.2px;margin:0">${escapeHtml(i.title)}</h3>
+                                        ${i.tokenNo ? `<span style="background:var(--accent);color:#fff;font-size:9px;font-weight:700;padding:2px 8px;border-radius:4px;letter-spacing:0.5px">#${escapeHtml(i.tokenNo)}</span>` : ''}
                                     </div>
-                                    <p style="color:var(--text-secondary); font-size: 12px; margin-bottom: 8px;">${escapeHtml(i.description)}</p>
-                                    <div style="display: flex; gap: 12px; font-size: 11px; color: var(--text-muted); flex-wrap: wrap;">
-                                        ${customer ? `<span>Customer: <strong style="color:var(--text-primary)">${escapeHtml(customer.name)}</strong></span>` : ''}
-                                        ${engineer ? `<span>Engineer: <strong style="color:var(--text-primary)">${escapeHtml(engineer.name)}</strong></span>` : '<span style="color:var(--danger)">Unassigned</span>'}
-                                        ${i.estimate ? `<span>Estimate: <strong style="color:var(--text-primary)">₹${i.estimate.toLocaleString('en-IN')}</strong></span>` : ''}
-                                        ${product ? `<span>Product: ${escapeHtml(product.name)}</span>` : ''}
-                                        <span>Created: ${formatDate(i.createdAt)}</span>
+                                    <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap">
+                                        <span class="status" style="color:${priorityColors[i.priority]};background:${i.priority === 'Critical' ? 'var(--danger-bg)' : i.priority === 'High' ? 'var(--warning-bg)' : i.priority === 'Medium' ? 'var(--info-bg)' : 'var(--success-bg)'}">${i.priority}</span>
+                                        <span class="status" style="color:${i.status === 'Open' ? 'var(--danger)' : i.status === 'In Progress' ? 'var(--info)' : i.status === 'Resolved' ? 'var(--success)' : 'var(--text-muted)'};background:${i.status === 'Open' ? 'var(--danger-bg)' : i.status === 'In Progress' ? 'var(--info-bg)' : i.status === 'Resolved' ? 'var(--success-bg)' : 'var(--bg-input)'}">${i.status}</span>
+                                    </div>
+                                    <p style="color:var(--text-secondary);font-size:12px;margin-bottom:12px;line-height:1.6">${escapeHtml(i.description)}</p>
+                                    <div style="display:flex;gap:16px;font-size:11px;color:var(--text-muted);flex-wrap:wrap">
+                                        ${customer ? `<span>👤 <strong style="color:var(--text-primary)">${escapeHtml(customer.name)}</strong></span>` : ''}
+                                        ${engineer ? `<span>🔧 <strong style="color:var(--text-primary)">${escapeHtml(engineer.name)}</strong></span>` : '<span style="color:var(--danger)">🔧 Unassigned</span>'}
+                                        ${i.estimate ? `<span>💰 <strong style="color:var(--accent)">₹${i.estimate.toLocaleString('en-IN')}</strong></span>` : ''}
+                                        ${product ? `<span>📦 ${escapeHtml(product.name)}</span>` : ''}
+                                        <span>📅 ${formatDate(i.createdAt)}</span>
                                     </div>
                                 </div>
-                                <div class="actions" style="flex-direction: column; gap: 4px;">
-                                    ${i.tokenNo ? `<button class="btn btn-primary btn-sm" onclick="event.stopPropagation();showIssueToken(issues.find(x=>x.id==='${i.id}'))">🎫 Token</button>` : ''}
+                                <div class="actions" style="flex-direction:column;gap:4px;flex-shrink:0">
+                                    ${i.tokenNo ? `<button class="btn btn-primary btn-sm" onclick="event.stopPropagation();showIssueToken(issues.find(x=>x.id==='${i.id}'))">Token</button>` : ''}
                                     <button class="btn btn-secondary btn-sm" onclick="event.stopPropagation();editIssue('${i.id}')">Edit</button>
                                     <button class="btn btn-danger btn-sm" onclick="event.stopPropagation();deleteIssue('${i.id}')">Delete</button>
                                 </div>
@@ -2281,14 +2552,15 @@ For updates, contact us at ${COMPANY.phone1}.
                 tbody.innerHTML = filtered.map(s => {
                     const customer = customers.find(c => c.id === s.customerId);
                     const paymentClass = s.paymentStatus === 'Paid' ? 'active' : s.paymentStatus === 'Pending' ? 'inactive' : 'pending';
-                    const emiBadge = s.emi && s.emi.enabled ? '<span style="display: inline-block; margin-left: 5px; padding: 2px 6px; background: rgba(0,217,255,0.2); color: #00d9ff; border-radius: 4px; font-size: 10px;">EMI</span>' : '';
+                    const emiBadge = s.emi && s.emi.enabled ? '<span style="display:inline-block;margin-left:5px;padding:2px 6px;background:var(--info-bg);color:var(--info);border-radius:4px;font-size:10px;font-weight:600">EMI</span>' : '';
+                    const totalColor = s.paymentStatus === 'Paid' ? 'var(--success)' : s.paymentStatus === 'Pending' ? 'var(--danger)' : 'var(--warning)';
                     return `
                         <tr>
                             <td><strong>${escapeHtml(s.receiptNo)}${emiBadge}</strong></td>
                             <td>${formatDate(s.createdAt)}</td>
                             <td>${customer ? escapeHtml(customer.name) : 'N/A'}</td>
                             <td>${s.items.length} item(s)</td>
-                            <td><strong style="color: #00ff88;">₹${parseFloat(s.total).toLocaleString('en-IN')}</strong></td>
+                            <td><strong style="color:${totalColor}">₹${parseFloat(s.total).toLocaleString('en-IN')}</strong></td>
                             <td><span class="status status-${paymentClass}">${s.paymentStatus}</span></td>
                             <td class="actions">
                                 <button class="btn btn-secondary btn-sm" onclick="editSale('${s.id}')">Edit</button>
@@ -2822,6 +3094,8 @@ For updates, contact us at ${COMPANY.phone1}.
 
             document.getElementById('receipt-content').innerHTML = receiptHtml;
             document.getElementById('receipt-modal').classList.add('active');
+            const msgField = document.getElementById('receipt-whatsapp-msg');
+            if (msgField) msgField.value = '';
         }
 
         function sendReceiptWhatsAppById(id) {
@@ -2867,7 +3141,12 @@ For updates, contact us at ${COMPANY.phone1}.
                 const itemsSummary = sale.items.map(item => `${item.name} x${item.qty}`).join(', ');
                 const productLabel = sale.productName ? `\n🏷️ *Product/Service:* ${sale.productName}` : '';
 
-                const sweetMessage = `Hello ${customerName}! 🎉✨
+                const customMsg = document.getElementById('receipt-whatsapp-msg')?.value?.trim();
+                let sweetMessage;
+                if (customMsg) {
+                    sweetMessage = `Hello ${customerName}! 🎉\n\n${customMsg}\n\n━━━━━━━━━━━━━━━━━━━━━\n🧾 *YOUR RECEIPT*\n━━━━━━━━━━━━━━━━━━━━━\n\n📋 *Receipt No:* ${sale.receiptNo}\n📅 *Date:* ${formatDate(sale.createdAt)} ${formatTime(sale.createdAt)}${productLabel}\n🛍️ *Items:* ${itemsSummary}\n💰 *Total:* ₹${sale.total.toLocaleString('en-IN')}\n💳 *Payment:* ${sale.paymentStatus} (${sale.paymentMethod})${sale.emi && sale.emi.enabled ? `\n\n━━━━━━━━━━━━━━━━━━━━━\n💳 *EMI DETAILS*\n━━━━━━━━━━━━━━━━━━━━━\n💰 *Down Payment:* ₹${(sale.emi.downPayment || 0).toLocaleString('en-IN')}\n📊 *EMI Amount:* ₹${(sale.emi.monthlyAmount || 0).toLocaleString('en-IN')}\n📅 *Duration:* ${sale.emi.duration || 0} Months\n📆 *Monthly EMI:* ₹${(sale.emi.monthlyAmount / (sale.emi.duration || 1)).toLocaleString('en-IN', { minimumFractionDigits: 2 })}` : ''}\n━━━━━━━━━━━━━━━━━━━━━\n\nWith love & gratitude,\n💝 *Team ${COMPANY.name}*\n📞 +91 ${COMPANY.phone1}`;
+                } else {
+                sweetMessage = `Hello ${customerName}! 🎉✨
 
 A huge THANK YOU for visting *${COMPANY.name}*! 💎
 
@@ -2901,6 +3180,7 @@ Wishing you all the best! 🌟
 With love & gratitude,
 💝 *Team ${COMPANY.name}*
 📞 +91 ${COMPANY.phone1}`;
+                }
 
                 if (navigator.share && navigator.canShare) {
                     try {
@@ -3284,7 +3564,7 @@ With love & gratitude,
             return date.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', hour12: true });
         }
 
-        function exportData() {
+        function exportDataJSON() {
             const data = {
                 customers,
                 products,
@@ -3302,7 +3582,142 @@ With love & gratitude,
             a.download = `diamond-crm-backup-${new Date().toISOString().split('T')[0]}.json`;
             a.click();
             URL.revokeObjectURL(url);
-            showToast('Data exported successfully!');
+            showToast('JSON data exported successfully!');
+        }
+
+        async function exportDataPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF('p', 'mm', 'a4');
+            const W = doc.internal.pageSize.getWidth();
+            const H = doc.internal.pageSize.getHeight();
+            const ML = 10;
+            const MR = W - 10;
+            const CW = MR - ML;
+            let y = 6;
+
+            doc.setTextColor(0, 0, 0);
+
+            // Header
+            try {
+                doc.addImage(COMPANY_LOGO_B64, 'PNG', ML, y, 18, 18);
+            } catch (e) {}
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(16);
+            doc.text('Diamond Computers CRM', MR, y + 8, { align: 'right' });
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(8);
+            doc.text('Exported: ' + new Date().toLocaleString(), MR, y + 14, { align: 'right' });
+
+            y += 24;
+
+            function drawSection(title, items, columns, rowsFn) {
+                if (doc.getNumberOfPages() > 1) {
+                    // only draw on first occurrence per page to avoid split logic
+                }
+                const needed = 16 + items.length * 7;
+                if (y + needed > H - 15) {
+                    doc.addPage();
+                    y = 10;
+                }
+
+                // Section title
+                doc.setFillColor(99, 102, 241);
+                doc.rect(ML, y, CW, 6, 'F');
+                doc.setTextColor(255, 255, 255);
+                doc.setFont('helvetica', 'bold');
+                doc.setFontSize(9);
+                doc.text(title + ' (' + items.length + ')', ML + 2, y + 4.5);
+                y += 8;
+
+                if (items.length === 0) {
+                    doc.setTextColor(120, 120, 120);
+                    doc.setFont('helvetica', 'italic');
+                    doc.setFontSize(8);
+                    doc.text('No records found.', ML + 2, y + 3);
+                    y += 10;
+                    return;
+                }
+
+                // Column headers
+                doc.setFillColor(230, 230, 230);
+                doc.rect(ML, y, CW, 5, 'F');
+                doc.setTextColor(30, 30, 30);
+                doc.setFont('helvetica', 'bold');
+                doc.setFontSize(7);
+                let cx = ML + 1;
+                const colW = (CW - 2) / columns.length;
+                columns.forEach((col, i) => {
+                    doc.text(col, cx + 0.5, y + 3.5);
+                    cx += colW;
+                });
+                y += 6;
+
+                // Rows
+                doc.setFont('helvetica', 'normal');
+                doc.setFontSize(6);
+                doc.setTextColor(50, 50, 50);
+                items.forEach((item, idx) => {
+                    if (y + 5 > H - 15) {
+                        doc.addPage();
+                        y = 10;
+                    }
+                    if (idx % 2 === 0) {
+                        doc.setFillColor(248, 248, 255);
+                        doc.rect(ML, y, CW, 5, 'F');
+                    }
+                    cx = ML + 1;
+                    const rowVals = rowsFn(item);
+                    rowVals.forEach((val, i) => {
+                        doc.text(String(val).substring(0, 25), cx + 0.5, y + 3.5);
+                        cx += colW;
+                    });
+                    y += 5;
+                });
+                y += 6;
+            }
+
+            // Customers
+            drawSection('Customers', customers, ['ID', 'Name', 'Phone', 'Email', 'GST', 'Address'], c => [
+                c.id, c.name, c.phone, c.email || '-', c.gst || '-', (c.address || '-').substring(0, 20)
+            ]);
+
+            // Products
+            drawSection('Products', products, ['ID', 'Name', 'Price', 'Stock'], p => [
+                p.id, p.name, p.price, p.stock
+            ]);
+
+            // Engineers
+            drawSection('Engineers', engineers, ['ID', 'Name', 'Phone', 'Specialty'], e => [
+                e.id, e.name, e.phone, e.specialty || '-'
+            ]);
+
+            // Issues
+            drawSection('Issues', issues, ['ID', 'Customer', 'Device', 'Status', 'Priority'], i => {
+                const cust = customers.find(c => c.id === i.customerId);
+                return [i.id, cust ? cust.name : '-', i.deviceModel || '-', i.status, i.priority || '-'];
+            });
+
+            // Sales
+            drawSection('Sales', sales, ['ID', 'Customer', 'Product', 'Qty', 'Total', 'Date'], s => {
+                const cust = customers.find(c => c.id === s.customerId);
+                return [s.id, cust ? cust.name : '-', s.productName || s.productId || '-', s.quantity || '-', s.total || '-', s.date ? s.date.substring(0, 10) : '-'];
+            });
+
+            // Footer
+            const pageCount = doc.getNumberOfPages();
+            for (let i = 1; i <= pageCount; i++) {
+                doc.setPage(i);
+                doc.setDrawColor(200, 200, 200);
+                doc.line(ML, H - 10, MR, H - 10);
+                doc.setTextColor(150, 150, 150);
+                doc.setFont('helvetica', 'italic');
+                doc.setFontSize(7);
+                doc.text('Diamond Computers CRM - Generated ' + new Date().toLocaleString(), ML, H - 5);
+                doc.text('Page ' + i + ' of ' + pageCount, MR, H - 5, { align: 'right' });
+            }
+
+            doc.save('diamond-crm-report-' + new Date().toISOString().split('T')[0] + '.pdf');
+            showToast('PDF report exported successfully!');
         }
 
         function importData() {
