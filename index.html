@@ -1129,7 +1129,7 @@
         // Company Details
         const COMPANY = {
             name: 'DIAMOND COMPUTER AND XEROX',
-            shop: 'SHOP NO. 1,2 OPP SARVJANIK GURATI SCHOOL NEAR GANDHI STATUE NAVAPUR 425416',
+            shop: 'SHOP NO. 1,2 OPP SARVJANIK GUJARATI SCHOOL NEAR GANDHI STATUE NAVAPUR 425418',
             phone1: '9405197975',
             phone2: '9637272742',
             email: 'diamondcomputer91@gmail.com',
@@ -2106,63 +2106,66 @@ Please resolve this at the earliest.
             const tokenHtml = `
                 <div style="border: 2px solid #1a237e; border-radius: 4px; overflow: hidden;">
                     <div style="background: #1a237e; color: #fff; padding: 14px 20px; text-align: center;">
-                        <div style="font-size: 16px; font-weight: 800; letter-spacing: 1px;">${COMPANY.name}</div>
-                        <div style="font-size: 9px; margin-top: 3px; opacity: 0.85;">${COMPANY.shop}</div>
-                        <div style="font-size: 9px; opacity: 0.85;">Ph: ${COMPANY.phone1} | ${COMPANY.phone2}</div>
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+                            <img src="logo.png" alt="DC" style="height: 36px; width: 36px; border-radius: 6px; object-fit: contain;" onerror="this.style.display='none'">
+                            <div style="font-size: 16px; font-weight: 800; letter-spacing: 1px;">${COMPANY.name}</div>
+                        </div>
+                        <div style="font-size: 10px; margin-top: 3px; color: #e8eaf6;">${COMPANY.shop}</div>
+                        <div style="font-size: 10px; color: #e8eaf6;">Ph: ${COMPANY.phone1} | ${COMPANY.phone2}</div>
                     </div>
 
                     <div style="text-align: center; padding: 12px 20px; background: #e8eaf6; border-bottom: 2px solid #1a237e;">
                         <div style="font-size: 18px; font-weight: 800; color: #1a237e; letter-spacing: 2px;">ISSUE TOKEN</div>
                         <div style="font-size: 22px; font-weight: 900; color: #c62828; margin-top: 6px; letter-spacing: 3px;">${escapeHtml(issue.tokenNo)}</div>
-                        <div style="font-size: 10px; color: #555; margin-top: 4px;">Date: ${now.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' })} &nbsp; Time: ${now.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' })}</div>
+                        <div style="font-size: 11px; color: #333; margin-top: 4px;">Date: ${now.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' })} &nbsp; Time: ${now.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' })}</div>
                     </div>
 
                     <div style="padding: 16px 20px;">
-                        <table style="width: 100%; border-collapse: collapse; font-size: 11px;">
+                        <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
                             <tr>
-                                <td style="padding: 6px 0; font-weight: 700; color: #1a237e; width: 140px; border-bottom: 1px solid #e0e0e0;">Token No</td>
-                                <td style="padding: 6px 0; border-bottom: 1px solid #e0e0e0; font-weight: 700; color: #c62828; font-size: 13px;">${escapeHtml(issue.tokenNo)}</td>
+                                <td style="padding: 8px 0; font-weight: 700; color: #1a237e; width: 150px; border-bottom: 1px solid #e0e0e0;">Token No</td>
+                                <td style="padding: 8px 0; border-bottom: 1px solid #e0e0e0; font-weight: 700; color: #c62828; font-size: 14px;">${escapeHtml(issue.tokenNo)}</td>
                             </tr>
                             <tr>
-                                <td style="padding: 6px 0; font-weight: 700; color: #1a237e; border-bottom: 1px solid #e0e0e0;">Customer Name</td>
-                                <td style="padding: 6px 0; border-bottom: 1px solid #e0e0e0;">${customer ? escapeHtml(customer.name) : 'N/A'}</td>
+                                <td style="padding: 8px 0; font-weight: 700; color: #1a237e; border-bottom: 1px solid #e0e0e0;">Customer Name</td>
+                                <td style="padding: 8px 0; border-bottom: 1px solid #e0e0e0; font-weight: 600; color: #000;">${customer ? escapeHtml(customer.name) : 'N/A'}</td>
                             </tr>
                             <tr>
-                                <td style="padding: 6px 0; font-weight: 700; color: #1a237e; border-bottom: 1px solid #e0e0e0;">Phone</td>
-                                <td style="padding: 6px 0; border-bottom: 1px solid #e0e0e0;">${customer ? customer.phone || 'N/A' : 'N/A'}</td>
+                                <td style="padding: 8px 0; font-weight: 700; color: #1a237e; border-bottom: 1px solid #e0e0e0;">Phone</td>
+                                <td style="padding: 8px 0; border-bottom: 1px solid #e0e0e0; font-weight: 600; color: #000;">${customer ? customer.phone || 'N/A' : 'N/A'}</td>
                             </tr>
                             <tr>
-                                <td style="padding: 6px 0; font-weight: 700; color: #1a237e; border-bottom: 1px solid #e0e0e0;">Address</td>
-                                <td style="padding: 6px 0; border-bottom: 1px solid #e0e0e0;">${customer ? customer.address || 'N/A' : 'N/A'}</td>
+                                <td style="padding: 8px 0; font-weight: 700; color: #1a237e; border-bottom: 1px solid #e0e0e0;">Address</td>
+                                <td style="padding: 8px 0; border-bottom: 1px solid #e0e0e0; font-weight: 600; color: #000;">${customer ? customer.address || 'N/A' : 'N/A'}</td>
                             </tr>
                             <tr>
-                                <td style="padding: 6px 0; font-weight: 700; color: #1a237e; border-bottom: 1px solid #e0e0e0;">Product/Device</td>
-                                <td style="padding: 6px 0; border-bottom: 1px solid #e0e0e0; font-weight: 600;">${product ? escapeHtml(product.name) : 'N/A'}</td>
+                                <td style="padding: 8px 0; font-weight: 700; color: #1a237e; border-bottom: 1px solid #e0e0e0;">Product/Device</td>
+                                <td style="padding: 8px 0; border-bottom: 1px solid #e0e0e0; font-weight: 600; color: #000;">${product ? escapeHtml(product.name) : 'N/A'}</td>
                             </tr>
                             <tr>
-                                <td style="padding: 6px 0; font-weight: 700; color: #1a237e; border-bottom: 1px solid #e0e0e0;">Issue Title</td>
-                                <td style="padding: 6px 0; border-bottom: 1px solid #e0e0e0; font-weight: 600;">${escapeHtml(issue.title)}</td>
+                                <td style="padding: 8px 0; font-weight: 700; color: #1a237e; border-bottom: 1px solid #e0e0e0;">Issue Title</td>
+                                <td style="padding: 8px 0; border-bottom: 1px solid #e0e0e0; font-weight: 600; color: #000;">${escapeHtml(issue.title)}</td>
                             </tr>
                             <tr>
-                                <td style="padding: 6px 0; font-weight: 700; color: #1a237e; border-bottom: 1px solid #e0e0e0;">Priority</td>
-                                <td style="padding: 6px 0; border-bottom: 1px solid #e0e0e0;">${issue.priority}</td>
+                                <td style="padding: 8px 0; font-weight: 700; color: #1a237e; border-bottom: 1px solid #e0e0e0;">Priority</td>
+                                <td style="padding: 8px 0; border-bottom: 1px solid #e0e0e0; font-weight: 600; color: #000;">${issue.priority}</td>
                             </tr>
                             <tr>
-                                <td style="padding: 6px 0; font-weight: 700; color: #1a237e; border-bottom: 1px solid #e0e0e0;">Status</td>
-                                <td style="padding: 6px 0; border-bottom: 1px solid #e0e0e0;">${issue.status}</td>
+                                <td style="padding: 8px 0; font-weight: 700; color: #1a237e; border-bottom: 1px solid #e0e0e0;">Status</td>
+                                <td style="padding: 8px 0; border-bottom: 1px solid #e0e0e0; font-weight: 600; color: #000;">${issue.status}</td>
                             </tr>
                             ${issue.estimate ? `<tr>
-                                <td style="padding: 6px 0; font-weight: 700; color: #1a237e; border-bottom: 1px solid #e0e0e0;">Estimated Cost</td>
-                                <td style="padding: 6px 0; border-bottom: 1px solid #e0e0e0; font-weight: 700; color: #2e7d32;">₹${parseFloat(issue.estimate).toLocaleString('en-IN', {minimumFractionDigits: 2})}</td>
+                                <td style="padding: 8px 0; font-weight: 700; color: #1a237e; border-bottom: 1px solid #e0e0e0;">Estimated Cost</td>
+                                <td style="padding: 8px 0; border-bottom: 1px solid #e0e0e0; font-weight: 700; color: #2e7d32; font-size: 14px;">₹${parseFloat(issue.estimate).toLocaleString('en-IN', {minimumFractionDigits: 2})}</td>
                             </tr>` : ''}
                             <tr>
-                                <td style="padding: 6px 0; font-weight: 700; color: #1a237e; border-bottom: 1px solid #e0e0e0;">Description</td>
-                                <td style="padding: 6px 0; border-bottom: 1px solid #e0e0e0;">${escapeHtml(issue.description) || 'N/A'}</td>
+                                <td style="padding: 8px 0; font-weight: 700; color: #1a237e; border-bottom: 1px solid #e0e0e0;">Description</td>
+                                <td style="padding: 8px 0; border-bottom: 1px solid #e0e0e0; font-weight: 600; color: #000;">${escapeHtml(issue.description) || 'N/A'}</td>
                             </tr>
                         </table>
                     </div>
 
-                    <div style="padding: 12px 20px; background: #fff3e0; border-top: 2px solid #1a237e; font-size: 10px; color: #555; line-height: 1.6;">
+                    <div style="padding: 12px 20px; background: #fff3e0; border-top: 2px solid #1a237e; font-size: 11px; color: #333; line-height: 1.6;">
                         <div style="font-weight: 700; color: #1a237e; margin-bottom: 4px;">IMPORTANT INSTRUCTIONS:</div>
                         <div>1. Please present this token when collecting your device.</div>
                         <div>2. Keep this token safe. Lost tokens may not be reissued.</div>
@@ -2171,13 +2174,13 @@ Please resolve this at the earliest.
 
                     <div style="display: flex; border-top: 2px solid #1a237e;">
                         <div style="flex: 1; padding: 12px 20px; border-right: 1px solid #e0e0e0; text-align: center;">
-                            <div style="font-size: 9px; color: #888; margin-bottom: 28px;">Customer Signature</div>
+                            <div style="font-size: 10px; color: #333; font-weight: 600; margin-bottom: 28px;">Customer Signature</div>
                             <div style="border-top: 1px solid #999; width: 120px; margin: 0 auto;"></div>
                         </div>
                         <div style="flex: 1; padding: 12px 20px; text-align: center;">
-                            <div style="font-size: 9px; color: #888; margin-bottom: 28px;">Authorized Signatory</div>
+                            <div style="font-size: 10px; color: #333; font-weight: 600; margin-bottom: 28px;">Authorized Signatory</div>
                             <div style="border-top: 1px solid #999; width: 120px; margin: 0 auto;"></div>
-                            <div style="font-size: 9px; color: #555; margin-top: 4px;">For ${COMPANY.name}</div>
+                            <div style="font-size: 10px; color: #333; font-weight: 600; margin-top: 4px;">For ${COMPANY.name}</div>
                         </div>
                     </div>
                 </div>
